@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styles from './style';
+import './index.css'
 import { Navbar, Hero, Stats, Features, Features2, Testimonials, CTA, Footer, Contact, Home, Blog } from './components/index';
 
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
             <Route exact path='/contact' element={<Contact />} />
         </Routes>
       </div>
+      
     </Router>
   );
 };

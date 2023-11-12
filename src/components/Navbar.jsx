@@ -7,7 +7,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className='w-full flex justify-between items-center navbar py-6'>
+    <nav className='w-full flex justify-between items-center navbar py-6 z-10'>
       <img
         src={unihub}
         alt="UniHub"
@@ -32,7 +32,7 @@ const Navbar = () => {
           onClick={() => setToggle(prev => !prev)}
         />
         <div className={`${toggle ? 'flex' : 'hidden'} bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar p-6`}>
-          <ul className="list-none flex justify-end items-center flex-col">
+          <ul className="list-none flex justify-end items-center flex-col z-10">
             {navLinks.map((item, index) => (
               <li
                 key={item.id}

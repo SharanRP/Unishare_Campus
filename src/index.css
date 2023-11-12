@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Laila:wght@500&display=swap');
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
 
 :root {
   --black-gradient: linear-gradient(
@@ -16,6 +20,10 @@
 
 * {
   scroll-behavior: smooth;
+}
+.font {
+  font-family: 'Comic Neue', cursive;
+  font-family: 'Laila', serif;
 }
 
 .text-gradient {
@@ -137,4 +145,31 @@
 .white__gradient {
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);
+}
+
+
+
+html::-webkit-scrollbar {
+  width: 10px;
+  display:none
+}
+
+html::-webkit-scrollbar-track {
+  background: 'transparent';
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgb(135, 233, 250);
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: rgb(100, 100, 100);
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:active {
+  background: rgb(68, 68, 68);
+  border-radius: 10px;
 }
