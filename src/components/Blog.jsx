@@ -17,7 +17,7 @@ const PostPage = ({ match }) => {
 
 const Blog = () => {
   return (
-    <div className='z-[-1] m-12 '>
+    <div className='m-12 '>
 
 {/* <Router> */}
       {/* <Switch>

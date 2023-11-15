@@ -31,7 +31,7 @@ const Navbar = () => {
           className='w-[28px] h-[28px] object-contain cursor-pointer'
           onClick={() => setToggle(prev => !prev)}
         />
-        <div className={`${toggle ? 'flex' : 'hidden'} bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar p-6`}>
+        <div className={`${toggle ? 'flex' : 'hidden'} bg-black-gradient absolute z-[10000] top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar p-6`}>
           <ul className="list-none flex justify-end items-center flex-col z-10">
             {navLinks.map((item, index) => (
               <li
