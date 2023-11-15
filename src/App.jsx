@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import styles from './style';
-import './index.css'
+import styles from './style'; // Make sure this import is needed
+import './index.css';
 import { Navbar, Hero, Stats, Features, Features2, Testimonials, CTA, Footer, Contact, Home, Blog } from './components/index';
+import FixedButton from './components/FixedButton';
 
 const App = () => {
+  const [isvisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 200 && window.scrollY < 2350);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <Router>
       <div className='bg-primary w-full overflow-hidden'>
@@ -13,6 +27,8 @@ const App = () => {
             <Navbar />
           </div>
         </div>
+
+        {isvisible && <FixedButton/>}
 
         {/* <div className={`bg-primary ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
@@ -35,15 +51,17 @@ const App = () => {
             </Routes>
           </div>
         </div> */}
-        <Routes> 
-            <Route exact path='/home' element={<Home />} />
-            <Route exact path='/blog' element={<Blog />} />
-            <Route exact path='/contact' element={<Contact />} />
+        <Routes>
+          <Route exact path='/home' element={<Home />} />
+          <Route exact path='/blog' element={<Blog />} />
+          <Route exact path='/contact' element={<Contact />} />
         </Routes>
       </div>
-      
     </Router>
   );
 };
 
 export default App;
+
+
+

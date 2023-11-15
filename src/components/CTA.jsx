@@ -10,7 +10,7 @@ const CTA = () => {
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Experience a hassle-free university journey and enhance your academic experience with us.</p>
       </div>
       <div className={`${styles.flexCenter} sm:ml-10 ml-0 sm:mt-0 mt-10`}>
-        <Button />
+        <Button buttonCaption='Sign up now' />
       </div>
     </section>
   );

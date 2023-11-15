@@ -34,7 +34,9 @@ const Features2 = () => {
         Lorem, ipsum dolor., <br className='sm:block hidden' /> Lorem ipsum dolor sit..
         </h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam itaque distinctio explicabo ratione sit facere similique aliquid, tenetur odio praesentium!</p>
-        <Button styles="mt-10" />
+        <div className='flex justify-end w-[550px]'>
+          <Button styles="mt-10" buttonCaption='View more Features' />
+        </div>
       </div>
     </section>
   );

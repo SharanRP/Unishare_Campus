@@ -16,6 +16,7 @@ import headerright from "./headerright.png";
 import close from "./close.svg"
 import send from "./send.svg"
 import shield from "./shield.svg"
+import community from "./community.png"
 
 
 export {
@@ -36,5 +37,6 @@ export {
   headerright,
   instagram,
   send,
-  shield
+  shield,
+  community
 };

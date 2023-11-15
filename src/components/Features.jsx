@@ -29,7 +29,7 @@ const Features = () => {
           Lorem, ipsum dolor., <br className='sm:block hidden' /> Lorem ipsum dolor sit..
         </h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam itaque distinctio explicabo ratione sit facere similique aliquid, tenetur odio praesentium!</p>
-        <Button styles="mt-10" />
+        <Button styles="mt-10" buttonCaption='Sign up' />
       </div>
 
       <div className={`${layout.sectionImg} flex-col`}>
