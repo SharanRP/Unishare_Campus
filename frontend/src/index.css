@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Laila:wght@500&display=swap');
 
-@import "tailwindcss/base";
+@import 'tailwindcss/base';
 
-@import "tailwindcss/components";
+@import 'tailwindcss/components';
 
-@import "tailwindcss/utilities";
+@import 'tailwindcss/utilities';
 
 :root {
   --black-gradient: linear-gradient(
@@ -16,6 +16,7 @@
     #11101d 91.61%
   );
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  --error: #e7195a;
 }
 
 * {
@@ -93,6 +94,22 @@
   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
+div.error {
+  padding: 5px;
+  background: #ffd1d1;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  text-align: center;
+  width: 300px;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+input.error {
+  border: 1px solid var(--error);
+}
+
 @-webkit-keyframes slide-top {
   0% {
     -webkit-transform: translateY(100px);
@@ -149,7 +166,7 @@
 
 html::-webkit-scrollbar {
   width: 10px;
-  display:none
+  display: none;
 }
 
 html::-webkit-scrollbar-track {
