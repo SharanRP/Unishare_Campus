@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import styles from './style';
 import './index.css';
 import {
@@ -22,10 +22,11 @@ import FixedButton from './components/FixedButton';
 import { useAuthContext } from './Hooks/useAuthContext';
 import RequireAuth from './Hooks/RequireAuth';
 import Blog from './components/Blog';
+import MainFeatures from './components/MainFeatures';
 
 const App = () => {
   const [isvisible, setIsVisible] = useState(false);
-  console.log(window.location.pathname);
+  const navigate = useNavigate();
 
   const { isAuthenticated } = useAuthContext();
 
@@ -41,6 +42,8 @@ const App = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const shouldShowFooter = !['/login', '/signup'].includes(window.location.pathname);
 
   return (
     <div className="bg-primary w-full overflow-hidden">
@@ -75,7 +78,16 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/features" element={<MainFeatures />} />
       </Routes>
+
+      {shouldShowFooter && (
+        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+          <div className={`${styles.boxWidth}`}>
+            <Footer />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

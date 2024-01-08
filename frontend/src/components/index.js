@@ -12,6 +12,7 @@ import Blogs from './Blogs';
 import CreateNewPost from './CreateNewPost';
 import Login from './Login';
 import Signup from './Signup';
+import PointerCal from './PointerCal';
 
 export {
   Navbar,
@@ -27,5 +28,6 @@ export {
   Contact,
   CreateNewPost,
   Login,
-  Signup
+  Signup,
+  PointerCal
 };

@@ -70,10 +70,6 @@ const Blogs = () => {
       </section>
 
       <BlogPagination />
-
-      <div className="m-6">
-        <Footer />
-      </div>
     </div>
   );
 };

@@ -109,9 +109,6 @@ const Contact = () => {
           </section>
         </div>
       </div>
-      <div className={`${styles.marginX}`}>
-        <Footer />
-      </div>
     </div>
   );
 };

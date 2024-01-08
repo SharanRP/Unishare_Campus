@@ -92,9 +92,6 @@ const CreateNewPost = () => {
           </div>
         </form>
       </section>
-      <div className={`${styles.marginX}`}>
-        <Footer />
-      </div>
     </>
   );
 };
