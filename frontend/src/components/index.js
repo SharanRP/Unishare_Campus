@@ -13,6 +13,7 @@ import CreateNewPost from './CreateNewPost';
 import Login from './Login';
 import Signup from './Signup';
 import PointerCal from './PointerCal';
+import Spinner from './Spinner';
 
 export {
   Navbar,
@@ -29,5 +30,6 @@ export {
   CreateNewPost,
   Login,
   Signup,
-  PointerCal
+  PointerCal,
+  Spinner
 };

@@ -1,7 +1,5 @@
 import { jwtDecode } from 'jwt-decode';
 import { createContext, useReducer, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import useLogout from '../Hooks/useLogout';
 
 export const AuthContext = createContext();
 

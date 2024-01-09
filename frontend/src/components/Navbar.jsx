@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { close, unihub, menu } from '../assets';
 import { navLinks } from '../constants';
 import useLogout from '../Hooks/useLogout';
 import { useAuthContext } from '../Hooks/useAuthContext';
+import { LoadingContext } from '../Context/LoadingContext';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -12,9 +13,13 @@ const Navbar = () => {
 
   console.log(isAuthenticated);
 
+  const { loadingState, setIsLoadingState } = useContext(LoadingContext);
+
   const { logout } = useLogout();
   const handleLogout = () => {
+    setIsLoadingState(true);
     logout();
+    setIsLoadingState(false);
   };
 
   return (

@@ -1,16 +1,18 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useAuthContext } from './useAuthContext';
 import { useNavigate } from 'react-router-dom';
+import { LoadingContext } from '../Context/LoadingContext';
 
 export const useSignup = () => {
   const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(null);
   const { dispatch } = useAuthContext();
   const navigate = useNavigate();
 
+  const { loadingState, setIsLoadingState } = useContext(LoadingContext);
+
   const signup = async (email, password) => {
     setError('');
-    setIsLoading(true);
+    setIsLoadingState(true);
 
     try {
       const response = await fetch('http://localhost:3000/api/user/signup', {
@@ -24,7 +26,7 @@ export const useSignup = () => {
       const json = await response.json();
 
       if (!response.ok) {
-        setIsLoading(false);
+        setIsLoadingState(false);
         setError(json.error);
       }
 
@@ -35,9 +37,10 @@ export const useSignup = () => {
       }
     } catch (error) {
       console.error('Error during signup:', error.error);
-      setIsLoading(false);
+      setIsLoadingState(false);
       setError('An unexpected error occurred.');
     }
+    setIsLoadingState(false);
   };
-  return { signup, error, isLoading };
+  return { signup, error, loadingState };
 };

@@ -12,7 +12,7 @@ const defaultOptions = {
   transition: true,
   axis: null,
   reset: true,
-  easing: 'cubic-bezier(0.68, -0.55, 0.27, 1.55)', // Adjust these values for smooth in and out animations
+  easing: 'cubic-bezier(0.68, -0.55, 0.27, 1.55)',
 };
 
 const buttonStyles = {
@@ -29,18 +29,26 @@ const buttonStyles = {
   button6:
     'bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800',
 };
+const tagStyles = {
+  button1: 'text-purple-300',
+  button2: 'text-cyan-300',
+  button3: 'text-green-300',
+  button4: 'text-purple-400',
+  button5: 'text-pink-400 ',
+  button6: 'text-teal-200',
+};
 
-const FeatureCard = ({ title, tag, info, buttontext, style }) => {
+const FeatureCard = ({ title, tag, info, buttontext, style, tagStyle }) => {
   return (
     <div className="card1 max-w-[380px] p-6 flex flex-col bg-clip-border rounded-xl bg-gradient-to-tr from-gray-700 via-gray-900 to-black shadow-md">
       <div className={`heading w-full mb-3`}>
         <h3 className="text-3xl font-semibold font ">{title}</h3>
       </div>
       <div className="tag mb-1">
-        <p>{tag}</p>
+        <p className={`text-[0.8rem] ${tagStyle}`}>{tag}</p>
       </div>
       <div className="info mb-[4rem] md:h-[100px]">
-        <p className={`${styles.paragraph}`}>{info}</p>
+        <p className={`${styles.paragraph} text-[1.1rem]`}>{info}</p>
       </div>
       <div className="function">
         <button
@@ -54,7 +62,6 @@ const FeatureCard = ({ title, tag, info, buttontext, style }) => {
     </div>
   );
 };
-
 
 const MainFeatures = () => {
   return (
@@ -75,40 +82,40 @@ const MainFeatures = () => {
           </h1>
         </div>
         <div className={`two ${styles.paddingY}`}>
-          <div className={`two-one flex flex-col gap-10 sm:flex-row mb-10`}>
+          <div className={`two-one flex flex-col gap-10 sm:flex-row mb-[70px]`}>
             <Tilt options={defaultOptions}>
               <div className="bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 p-[1px] rounded-xl">
                 <FeatureCard
                   title="Pointer Calculator"
-                  tag="text"
-                  info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                    tempore quis minima illum neque"
-                  buttontext="Calculate Now"
+                  tag="#Grades"
+                  info="Curious about your college grades? Our swift SPI Calculator makes it a breeze to calculate your SPI in minutes."
+                  buttontext="Calculate SPI 📊"
                   style={buttonStyles.button1}
+                  tagStyle={tagStyles.button1}
                 />
               </div>
             </Tilt>
             <Tilt options={defaultOptions}>
               <div className="bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 p-[1px] rounded-xl">
                 <FeatureCard
-                  title="Pointer Calculator"
-                  tag="text"
-                  info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                  tempore quis minima illum neque"
-                  buttontext="Calculate Now"
+                  title="PYQ Papers"
+                  tag="#Pyq"
+                  info="Uncover triumph in every semester with our extensive stash of Previous Year Question Papers."
+                  buttontext="View Papers 📑"
                   style={buttonStyles.button2}
+                  tagStyle={tagStyles.button2}
                 />
               </div>
             </Tilt>
             <Tilt options={defaultOptions}>
               <div className="bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 p-[1px] rounded-xl">
                 <FeatureCard
-                  title="Pointer Calculator"
-                  tag="text"
-                  info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                  tempore quis minima illum neque"
-                  buttontext="Calculate Now"
+                  title="Viva Chatbot"
+                  tag="#Viva"
+                  info="Viva-ready in a chat! Engage with Viva Chatbot, your ultimate prep companion. Get ready now!"
+                  buttontext="Start Chat 💬"
                   style={buttonStyles.button3}
+                  tagStyle={tagStyles.button3}
                 />
               </div>
             </Tilt>
@@ -117,43 +124,49 @@ const MainFeatures = () => {
             <Tilt options={defaultOptions}>
               <div className="bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 p-[1px] rounded-xl">
                 <FeatureCard
-                  title="Pointer Calculator"
-                  tag="text"
-                  info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                  tempore quis minima illum neque"
-                  buttontext="Calculate Now"
+                  title="College Events"
+                  tag="#Events"
+                  info="Discover upcoming events and engaging extracurricular activities with our Calendar, ensuring you never miss a moment of enrichment."
+                  buttontext="Explore Events 📅"
                   style={buttonStyles.button4}
+                  tagStyle={tagStyles.button4}
                 />
               </div>
             </Tilt>
             <Tilt options={defaultOptions}>
               <div className="bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 p-[1px] rounded-xl">
                 <FeatureCard
-                  title="Pointer Calculator"
-                  tag="text"
-                  info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                  tempore quis minima illum neque"
-                  buttontext="Calculate Now"
+                  title="UniHub Community"
+                  tag="#Community"
+                  info="Connect, share, shape - Join UniHub Community, where vibrant conversations ignite change. Join now!"
+                  buttontext="Join Community 🌐"
                   style={buttonStyles.button5}
+                  tagStyle={tagStyles.button5}
                 />
               </div>
             </Tilt>
             <Tilt options={defaultOptions}>
               <div className="bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 p-[1px] rounded-xl">
                 <FeatureCard
-                  title="Pointer Calculator"
-                  tag="text"
-                  info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-                  tempore quis minima illum neque"
-                  buttontext="Calculate Now"
+                  title="Lost and Found"
+                  tag="#Rediscovery"
+                  info="Recover your belongings seamlessly with Lost and Found. "
+                  buttontext="Find Items 🔍"
                   style={buttonStyles.button6}
+                  tagStyle={tagStyles.button6}
                 />
               </div>
             </Tilt>
           </div>
         </div>
-        <div className={`three text-[50px] py-6 w-full`}>
-          Big Heading
+        <div className={`three text-[50px] py-6 w-full ${styles.marginY} text-center`}>
+          <h1
+            id="typing-text"
+            className="heroHeading font-poppins font-semibold text-[52px] md:text-[58px] lg:text-[68px] text-white ss:leading-[100.8px] leading-[75px]"
+          >
+            UniHub - Ignite, Connect, Excel!
+          </h1>
+
         </div>
       </div>
     </section>

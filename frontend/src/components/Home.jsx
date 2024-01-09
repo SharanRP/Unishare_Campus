@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import styles from '../style';
-import { Hero, Stats, Features, Features2, Testimonials, CTA, Footer } from './index';
+import {
+  Hero,
+  Stats,
+  Features,
+  Features2,
+  Testimonials,
+  CTA,
+  Footer,
+  Spinner,
+} from './index';
+import { LoadingContext } from '../Context/LoadingContext';
 
 const Home = () => {
+  const { loadingState, setIsLoadingState } = useContext(LoadingContext);
+
   return (
     <>
-      <div className={`bg-primary ${styles.flexStart}`}>
+      {loadingState && <Spinner />}
+      {!loadingState && (
+        <>
+          <div className={`bg-primary ${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>
               <Hero />
             </div>
@@ -20,8 +35,10 @@ const Home = () => {
               <CTA />
             </div>
           </div>
+        </>
+      )}
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
