@@ -23,6 +23,8 @@ import { useAuthContext } from './Hooks/useAuthContext';
 import RequireAuth from './Hooks/RequireAuth';
 import Blog from './components/Blog';
 import MainFeatures from './components/MainFeatures';
+import Calender from './components/Calender';
+import CalendarPage from './components/CalenderPage';
 
 const App = () => {
   const [isvisible, setIsVisible] = useState(false);
@@ -79,6 +81,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/features" element={<MainFeatures />} />
+        <Route path="/events" element={<div className=' m-4 p-2 h-full'><CalendarPage /></div>} />
       </Routes>
 
       {shouldShowFooter && (
