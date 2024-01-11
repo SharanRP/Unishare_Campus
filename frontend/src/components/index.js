@@ -14,6 +14,8 @@ import Login from './Login';
 import Signup from './Signup';
 import PointerCal from './PointerCal';
 import Spinner from './Spinner';
+import Papers from './Papers';
+import CalenderPage from './CalenderPage';
 
 export {
   Navbar,
@@ -31,5 +33,7 @@ export {
   Login,
   Signup,
   PointerCal,
-  Spinner
+  Spinner,
+  Papers,
+  CalenderPage
 };

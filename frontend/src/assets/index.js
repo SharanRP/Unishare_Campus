@@ -19,6 +19,7 @@ import shield from "./shield.svg"
 import community from "./community.png"
 import plus from "./plus.gif"
 import headAnimate from "./headAnimate.json"
+import pdficon from "./pdficon.png"
 
 
 
@@ -43,5 +44,6 @@ export {
   shield,
   community,
   plus,
-  headAnimate
+  headAnimate,
+  pdficon
 };

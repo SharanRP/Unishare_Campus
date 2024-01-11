@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import CustomCard from './CustomCard';
 import styles from '../style';
 import Spinner from './Spinner';
@@ -20,26 +20,38 @@ const Blog = () => {
     }
 
     const fetchData = async () => {
-      const data = await fetch(`http://localhost:3000/api/blogs/${id}`, {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${
-            JSON.parse(localStorage.getItem('user')).token
-          }`,
-        },
-      });
-      const { blog } = await data.json();
-      console.log(blog);
-      setBlog(blog);
-      setIsLoadingState(false);
+      try {
+        const data = await fetch(`http://localhost:3000/api/blogs/${id}`, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        });
+
+        if (!data.ok) {
+          // Handle error response, if needed
+          console.error('Failed to fetch blog data');
+          return;
+        }
+
+        const { blog } = await data.json();
+        console.log(blog);
+        setBlog(blog);
+      } catch (error) {
+        // Handle fetch error
+        console.error('Error during fetch:', error);
+      } finally {
+        setIsLoadingState(false);
+      }
     };
+
     fetchData();
-  }, [id]);
+  }, [id, setIsLoadingState]);
 
   return (
     <>
       {loadingState && <Spinner />}
-      {loadingState && (
+      {!loadingState && (
         <div className={`${styles.flexCenter} ${styles.paddingY}`}>
           {blog && (
             <CustomCard

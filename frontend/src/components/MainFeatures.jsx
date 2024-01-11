@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from '../style';
 import PointerCal from './PointerCal';
 import { Tilt } from 'react-tilt';
@@ -38,7 +39,12 @@ const tagStyles = {
   button6: 'text-teal-200',
 };
 
-const FeatureCard = ({ title, tag, info, buttontext, style, tagStyle }) => {
+const FeatureCard = ({ title, tag, info, buttontext, style, tagStyle, page }) => {
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate(page);
+  };
+
   return (
     <div className="card1 max-w-[380px] p-6 flex flex-col bg-clip-border rounded-xl bg-gradient-to-tr from-gray-700 via-gray-900 to-black shadow-md">
       <div className={`heading w-full mb-3`}>
@@ -52,7 +58,8 @@ const FeatureCard = ({ title, tag, info, buttontext, style, tagStyle }) => {
       </div>
       <div className="function">
         <button
-          className={`relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group ${style} `}
+          className={`relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group ${style}`}
+          onClick={() => handleButtonClick(page)}
         >
           <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             {buttontext}
@@ -92,6 +99,7 @@ const MainFeatures = () => {
                   buttontext="Calculate SPI 📊"
                   style={buttonStyles.button1}
                   tagStyle={tagStyles.button1}
+                  page="/features/pointer-calculator"
                 />
               </div>
             </Tilt>
@@ -104,6 +112,7 @@ const MainFeatures = () => {
                   buttontext="View Papers 📑"
                   style={buttonStyles.button2}
                   tagStyle={tagStyles.button2}
+                  page="/features/previous-year-papers"
                 />
               </div>
             </Tilt>
@@ -116,6 +125,7 @@ const MainFeatures = () => {
                   buttontext="Start Chat 💬"
                   style={buttonStyles.button3}
                   tagStyle={tagStyles.button3}
+                  page="/features/chat-bot"
                 />
               </div>
             </Tilt>
@@ -130,6 +140,7 @@ const MainFeatures = () => {
                   buttontext="Explore Events 📅"
                   style={buttonStyles.button4}
                   tagStyle={tagStyles.button4}
+                  page="/features/college-events"
                 />
               </div>
             </Tilt>
@@ -142,6 +153,7 @@ const MainFeatures = () => {
                   buttontext="Join Community 🌐"
                   style={buttonStyles.button5}
                   tagStyle={tagStyles.button5}
+                  page="/features/community"
                 />
               </div>
             </Tilt>
@@ -154,19 +166,21 @@ const MainFeatures = () => {
                   buttontext="Find Items 🔍"
                   style={buttonStyles.button6}
                   tagStyle={tagStyles.button6}
+                  page="/features/community"
                 />
               </div>
             </Tilt>
           </div>
         </div>
-        <div className={`three text-[50px] py-6 w-full ${styles.marginY} text-center`}>
+        <div
+          className={`three text-[50px] py-6 w-full ${styles.marginY} text-center`}
+        >
           <h1
             id="typing-text"
             className="heroHeading font-poppins font-semibold text-[52px] md:text-[58px] lg:text-[68px] text-white ss:leading-[100.8px] leading-[75px]"
           >
             UniHub - Ignite, Connect, Excel!
           </h1>
-
         </div>
       </div>
     </section>

@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import styles from './style';
 import './index.css';
 import {
   Navbar,
-  Hero,
-  Stats,
-  Features,
-  Features2,
-  Testimonials,
-  CTA,
   Footer,
   Contact,
   Home,
@@ -17,18 +11,23 @@ import {
   CreateNewPost,
   Login,
   Signup,
+  PointerCal,
+  Papers,
+  CalenderPage,
 } from './components/index';
 import FixedButton from './components/FixedButton';
 import { useAuthContext } from './Hooks/useAuthContext';
 import RequireAuth from './Hooks/RequireAuth';
 import Blog from './components/Blog';
 import MainFeatures from './components/MainFeatures';
+import { LoadingContext } from './Context/LoadingContext';
 
 const App = () => {
   const [isvisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
   const { isAuthenticated } = useAuthContext();
+  const { loadingState, setIsLoadingState } = useContext(LoadingContext);
 
   useEffect(() => {
     if (window.location.pathname !== '/') return;
@@ -43,7 +42,8 @@ const App = () => {
     };
   }, []);
 
-  const shouldShowFooter = !['/login', '/signup'].includes(window.location.pathname);
+  const shouldShowFooter =
+    !['/login', '/signup'].includes(window.location.pathname) && !loadingState;
 
   return (
     <div className="bg-primary w-full overflow-hidden">
@@ -76,9 +76,15 @@ const App = () => {
         </Route>
         <Route path="/blogs/create" element={<CreateNewPost />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/events" element={<CalenderPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/features" element={<MainFeatures />} />
+        <Route path="/features/pointer-calculator" element={<PointerCal />} />
+        <Route path="/features/previous-year-papers" element={<Papers />} />
+        <Route path="/features/chat-bot" element={<MainFeatures />} />
+        <Route path="/features/community" element={<MainFeatures />} />
+        <Route path="/features/community" element={<MainFeatures />} />
       </Routes>
 
       {shouldShowFooter && (

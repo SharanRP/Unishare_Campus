@@ -31,13 +31,21 @@ const CustomCard = ({
     <section
       className={`${styles.cardContainer}  md:w-[800px] lg:w-[1040px] mt-16 p-[7px] bg-gradient-to-b from-sky-950 from-60% to-black rounded-[1rem] bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30 hover:outline-cyan-700 hover:outline-none outline-2 box-border`}
     >
-      <div className={`relative h-full flex ${isSingle ? 'flex-col' : 'sm:flex-row'} p-[10px] pb-0 sm:p-4`}>
+      <div
+        className={`relative h-full flex ${
+          isSingle ? 'flex-col' : 'sm:flex-row'
+        } p-[10px] pb-0 sm:p-4`}
+      >
         <img
           src={imageUrl}
           alt={`Image for ${title}`}
           className="sm:w-1/3 sm:max-w-lg p-auto object-cover rounded-xl bg-clip-border"
         />
-        <div className={`text-gray-100  ${isSingle ? 'w-full' : 'sm:w-2/3'}  p-4 py-0 text-[16px] sm:mx-4 overflow-hidden text-gray-800bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40`}>
+        <div
+          className={`text-gray-100  ${
+            isSingle ? 'w-full' : 'sm:w-2/3'
+          }  p-4 py-0 text-[16px] sm:mx-4 overflow-hidden text-gray-800bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40`}
+        >
           <h5 className="block mb-2 text-2xl font-semibold text-gray-100">
             {title}
           </h5>
