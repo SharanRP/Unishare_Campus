@@ -55,7 +55,11 @@ const Blogs = () => {
             })}
           </div>
           <section
-            className={`${styles.flexCenter} ${styles.marginY} py-4 px-7 sm:flex-row flex-col bg-black-gradient-2 rounded-[20px] box-shadow text-center max-w-4xl mx-auto`}
+            className={`${styles.flexCenter} ${
+              styles.marginY
+            } py-4 px-7 sm:flex-row flex-col bg-black-gradient-2 rounded-[20px] box-shadow text-center max-w-4xl mx-auto ${
+              loadingState ? 'hidden' : ''
+            }`}
           >
             <div className="flex sm:flex-row flex-col flex-1 items-center sm:gap-10">
               <h2 className={`${styles.heading2}`}>Add Your Blog now</h2>

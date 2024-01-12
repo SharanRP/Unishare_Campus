@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../style';
 import { useSignup } from '../Hooks/useSignup';
 import Spinner from './Spinner';
@@ -7,6 +7,13 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { signup, error, loadingState } = useSignup();
+  const [sectionHeight, setSectionHeight] = useState('100vh');
+
+  useEffect(() => {
+    const navbarHeight = 154.84;
+    const newHeight = `calc(100vh - ${navbarHeight}px)`;
+    setSectionHeight(newHeight);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +25,10 @@ const Signup = () => {
     <>
       {loadingState && <Spinner />}
       {!loadingState && (
-        <section className={`bg-primary ${styles.flexCenter} h-[100vh]`}>
+        <section
+          className={`bg-primary ${styles.flexStart} mt-10 font-poppins`}
+          style={{ height: sectionHeight }}
+        >
           <div className="flex max-w-[450px] flex-1 flex-col justify-center lg:px-8">
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-300">
               Create a New Account

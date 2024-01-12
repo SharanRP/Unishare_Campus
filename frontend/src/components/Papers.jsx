@@ -6,7 +6,7 @@ const Papers = () => {
   const years = ['2018', '2019', '2020', '2021', '2022', '2023'];
   const semesters = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
 
-  const [selectedSemeter, setSelectedSemester] = useState(years[0]);
+  const [selectedSemester, setSelectedSemester] = useState(semesters[0]);
   const [selectedYear, setSelectedYear] = useState(years[0]);
 
   const papersData = [
@@ -14,21 +14,23 @@ const Papers = () => {
     { sem: 'I', year: '2018', title: 'Paper A', link: '' },
     { sem: 'I', year: '2018', title: 'Paper A', link: '' },
     { sem: 'I', year: '2018', title: 'Paper A', link: '' },
-    { sem: 'I', year: '2018', title: 'Paper A', link: '' },
+    { sem: 'III', year: '2020', title: 'Paper A', link: '' },
     { sem: 'I', year: '2018', title: 'Paper A', link: '' },
     { sem: 'I', year: '2018', title: 'Paper A', link: '' },
   ];
 
   const filteredPapers = papersData.filter(
-    (paper) => paper.year === selectedYear,
+    (paper) => paper.year === selectedYear && paper.sem === selectedSemester,
   );
+
+  console.log(filteredPapers);
 
   return (
     <section
       className={`bg-primary ${styles.paddingY} ${styles.paddingX} ${styles.boxWidth} text-white`}
     >
       <div
-        className={`outer border flex flex-col flex-1 ${styles.paddingX} sm:p-0 ${styles.flexCenter} ${styles.boxWidth}`}
+        className={`outer border rounded-2xl flex flex-col flex-1 ${styles.paddingX} sm:p-0 ${styles.flexCenter} ${styles.boxWidth}`}
       >
         <div className="one py-6 mb-5 flex flex-1  flex-col  justify-evenly gap-5  w-full">
           <div className="text-center">
@@ -39,9 +41,9 @@ const Papers = () => {
               Free Pdfs for you
             </h1>
           </div>
-          <div className='flex items-center justify-center gap-10 max-w-[400px]:'>
+          <div className='flex items-center justify-center gap-10'>
             <select
-              value={selectedSemeter}
+              value={selectedSemester}
               onChange={(e) => setSelectedSemester(e.target.value)}
               className=" bg-white font-semibold text-[1.2rem] text-gray-800 w-[150px] rounded py-1 px-4"
             >

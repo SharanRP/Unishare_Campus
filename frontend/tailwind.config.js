@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
+      backdropBlur: {
+        xs: '2px',
+      },
     },
     screens: {
       xs: '480px',

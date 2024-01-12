@@ -164,6 +164,19 @@ input.error {
   filter: blur(750px);
 }
 
+.slide-in {
+  animation: slideIn 1s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 html::-webkit-scrollbar {
   width: 10px;
   display: none;

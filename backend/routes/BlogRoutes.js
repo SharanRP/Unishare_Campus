@@ -17,6 +17,9 @@ router.get('/:id', jwtMiddleware, async (req, res) => {
 router.post('/', jwtMiddleware, async (req, res) => {
   console.log(req.user);
   const { title, body } = req.body;
+  if (!title || !body) {
+    return res.status(400).json({ error: 'All fields are necessary.' });
+  }
   console.log(title, body);
   const blog = new Blog({
     title,
