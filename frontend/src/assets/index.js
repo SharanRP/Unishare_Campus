@@ -20,7 +20,6 @@ import community from "./community.png"
 import plus from "./plus.gif"
 import headAnimate from "./headAnimate.json"
 import pdficon from "./pdficon.png"
-import loder from "./loder.png"
 import greenCheck from "./greenCheck.png"
 
 export {
@@ -46,6 +45,5 @@ export {
   plus,
   headAnimate,
   pdficon,
-  loder,
   greenCheck
 };

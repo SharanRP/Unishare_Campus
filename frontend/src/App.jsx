@@ -78,13 +78,13 @@ const App = () => {
         </Route>
         <Route path="/blogs/create" element={<CreateNewPost />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/events" element={<CalenderPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/features" element={<MainFeatures />} />
         <Route path="/features/pointer-calculator" element={<PointerCal />} />
         <Route path="/features/previous-year-papers" element={<Papers />} />
         <Route path="/features/chat-bot" element={<MainFeatures />} />
+        <Route path="/features/college-events" element={<CalenderPage />} />
         <Route path="/features/community" element={<MainFeatures />} />
         <Route path="/features/community" element={<MainFeatures />} />
       </Routes>

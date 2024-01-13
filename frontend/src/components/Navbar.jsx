@@ -41,7 +41,7 @@ const Navbar = () => {
           <Link to="/contact">Contact us</Link>
         </li>
         <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
-          <Link to="/events">Events</Link>
+          <Link to="/features/college-events">Events</Link>
         </li>
         {isAuthenticated && (
           <div>
@@ -85,7 +85,7 @@ const Navbar = () => {
               <Link to="/contact">Contact us</Link>
             </li>
             <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10 mb-4">
-              <Link to="/events">Events</Link>
+              <Link to="/features/college-events">Events</Link>
             </li>
             {isAuthenticated && (
               <div>
