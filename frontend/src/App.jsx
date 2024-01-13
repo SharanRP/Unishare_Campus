@@ -1,5 +1,7 @@
+
 import React, { useState, useEffect, useContext } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react';
 import styles from './style';
 import './index.css';
 import {
@@ -46,7 +48,7 @@ const App = () => {
     !['/login', '/signup'].includes(window.location.pathname) && !loadingState;
 
   return (
-
+  <ChakraProvider>
     <div className="bg-primary w-full overflow-hidden">
 
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
@@ -81,7 +83,16 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/features" element={<MainFeatures />} />
-        <Route path="/features/pointer-calculator" element={<PointerCal />} />
+
+        <Route
+          path="/features/pointer-calculator"
+          element={
+            <div className=' bg-gradient-to-r flex  from-indigo-300 via-purple-200 to-pink-200  border mx-6 my-auto p-3 rounded-lg'>
+              <PointerCal />
+            </div>
+          }
+        />
+
         <Route path="/features/previous-year-papers" element={<Papers />} />
         <Route path="/features/chat-bot" element={<MainFeatures />} />
         <Route path="/features/college-events" element={<CalenderPage />} />
@@ -97,6 +108,7 @@ const App = () => {
         </div>
       )}
     </div>
+  </ChakraProvider>
   );
 };
 
