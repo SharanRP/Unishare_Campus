@@ -9,34 +9,37 @@ const Result = ({ pointer }) => {
 
     React.useEffect(() => {
         if (res >= 9) {
-            setImgUrl('https://giphy.com/embed/G96zgIcQn1L2xpmdxi/video')
+            setImgUrl('https://i.ibb.co/Ry7g69d/10-9.jpg')
             setMessage('Wohoooo! Keep up the top score!')
         } else if (res >= 8) {
-            setImgUrl('https://giphy.com/embed/IwAZ6dvvvaTtdI8SD5')
+            setImgUrl('https://i.ibb.co/xfLy0Pq/8-9.jpg')
             setMessage('Awesome! You are definitely going places!')
         } else if (res >= 7) {
-            setImgUrl('https://giphy.com/embed/uJFSCnoNb98RbxoJ4p')
+            setImgUrl('https://i.ibb.co/xMGC0bX/7-8.jpg')
             setMessage('Good Job! Keep striving for more!')
         } else if (res >= 6) {
-            setImgUrl('https://giphy.com/embed/0DhHqfExMMT7VdeqIr')
+            setImgUrl('https://i.ibb.co/1MG4psK/6-7.jpg')
             setMessage('Keep trying harder buddy!')
         } else if (res >= 5) {
-            setImgUrl('https://giphy.com/embed/n11bBAGXddq37hmNqP')
+            setImgUrl('https://i.ibb.co/MNp2nDX/5-6.jpg')
             setMessage('Get back to your desk and start studying!')
-        } else {
-            setImgUrl('https://giphy.com/embed/hyyV7pnbE0FqLNBAzs')
+        } else if(res >= 4) {
+            setImgUrl('https://i.ibb.co/RS4XDzy/4-5.jpg')
             setMessage('You need a lot of work! Leave everything and focus!')
+        } else  {
+            setImgUrl('https://i.ibb.co/2qq4151/4-less.jpg')
+            setMessage('Success is not final, failure is not fatal: It is the courage to continue that counts!')
         }
         // eslint-disable-next-line
     }, []);
 
     return (
         <div>
-            <h2 className='heading'>{`Your pointer is ${res} !`}</h2>
-            <div>
-                <iframe title='xyz' src={imgUrl}></iframe>
+            <h2 style={{fontFamily:'cursive'}} className='heading text-3xl text-gray-900'>{`Your pointer is ${res} !`}</h2>
+            <div className='h-full w-full items-center flex justify-center '>
+               <img src = {imgUrl} className='h-3/4 w-3/4  md:h-2/4 md:w-2/4 ' style={{mixBlendMode: "multiply"}} />
             </div>
-            <p style={{marginTop: '10px', textAlign: 'center'}}>{message}</p>
+            <p className='text-2xl text-gray-700' style={{marginTop: '10px', textAlign: 'center', fontFamily:'arial'}}>{message}</p>
         </div>
     )
 }
