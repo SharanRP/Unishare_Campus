@@ -1,22 +1,56 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext , useLayoutEffect , useState } from 'react';
 import '../evo-calendar.midnight-blue.css';
 import styles from '../style';
 import Spinner from './Spinner';
 
 const CalendarComponent = () => {
-  useEffect(() => {
-    const loadCalendarScripts = async () => {
-      await import('https://code.jquery.com/jquery-3.4.1.min.js');
 
-      await import(
-        'https://cdn.jsdelivr.net/npm/evo-calendar@latest/evo-calendar/js/evo-calendar.min.js'
-      );
+  const [stylesLoaded, setStylesLoaded] = useState(false);
 
-      $('#calendar').evoCalendar({});
+  useLayoutEffect(() => {
+    const loadCssFile = async () => {
+      try {
+        await import('../evo-calendar.midnight-blue.css');
+        setStylesLoaded(true);
+      } catch (error) {
+        console.error('Error loading CSS file:', error);
+      }
     };
 
-    loadCalendarScripts();
+    loadCssFile();
   }, []);
+
+  // useEffect(() => {
+  //   const loadCalendarScripts = async () => {
+  //     await import('https://code.jquery.com/jquery-3.4.1.min.js');
+
+  //     await import(
+  //       'https://cdn.jsdelivr.net/npm/evo-calendar@latest/evo-calendar/js/evo-calendar.min.js'
+  //     );
+
+  //     $('#calendar').evoCalendar({});
+  //   };
+
+  //   loadCalendarScripts();
+  // }, []);
+
+  useLayoutEffect(() => {
+    if (stylesLoaded) {
+      const loadCalendarScripts = async () => {
+        await import('https://code.jquery.com/jquery-3.4.1.min.js');
+        await import(
+          'https://cdn.jsdelivr.net/npm/evo-calendar@latest/evo-calendar/js/evo-calendar.min.js'
+        );
+
+        $('#calendar').evoCalendar({
+          theme: 'Midnight Blue',
+
+        });
+      };
+
+      loadCalendarScripts();
+    }
+  }, [stylesLoaded]);
 
   useEffect(() => {
     const jqueryScript = document.createElement('script');
