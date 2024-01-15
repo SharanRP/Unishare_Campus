@@ -87,7 +87,7 @@ const App = () => {
         <Route
           path="/features/pointer-calculator"
           element={
-            <div className=' bg-gradient-to-r flex  from-indigo-300 via-purple-200 to-pink-200  border mx-6 my-auto p-3 rounded-lg'>
+            <div className=' bg-gradient-to-r flex  from-indigo-300 via-purple-200 to-pink-200  border mx-6 my-auto p-5 rounded-lg'>
               <PointerCal />
             </div>
           }
