@@ -23,6 +23,10 @@ import RequireAuth from './Hooks/RequireAuth';
 import Blog from './components/Blog';
 import MainFeatures from './components/MainFeatures';
 import { LoadingContext } from './Context/LoadingContext';
+import Homepage from './Pages/HomePage';
+import ChatPage from './Pages/ChatPage';
+import './App.css';
+import ChatProvider from './Context/chatProvider';
 
 const App = () => {
   const [isvisible, setIsVisible] = useState(false);
@@ -49,6 +53,7 @@ const App = () => {
 
   return (
   <ChakraProvider>
+   <ChatProvider>
     <div className="bg-primary w-full overflow-hidden">
 
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
@@ -59,7 +64,7 @@ const App = () => {
 
       {isvisible && window.location.pathname === '/' && <FixedButton />}
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        {/* <Route exact path="/" element={<Home />} /> */}
         <Route path="/blogs">
           <Route
             index
@@ -83,6 +88,10 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/features" element={<MainFeatures />} />
+        {/* <div className="App"> */}
+        <Route path="/" element={<Homepage />} exact />
+        <Route path="/chats" element={<ChatPage />} />
+        {/* </div> */}
 
         <Route
           path="/features/pointer-calculator"
@@ -108,6 +117,7 @@ const App = () => {
         </div>
       )}
     </div>
+    </ChatProvider>
   </ChakraProvider>
   );
 };

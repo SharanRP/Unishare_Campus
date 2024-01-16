@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+p.animated {
+  font-weight: 700;
+  text-align: center;
+  font-size: 40px;
+  font-family: Hack, sans-serif;
+  text-transform: uppercase;
+  margin-top: 6rem;
+  background: linear-gradient(90deg, #000, #fff, #8f8888);
+  letter-spacing: 5px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: shine 5s linear infinite;
+  position: relative;
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 500%;
+  }
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
