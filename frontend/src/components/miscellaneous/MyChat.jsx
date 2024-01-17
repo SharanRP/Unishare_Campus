@@ -23,8 +23,8 @@ const MyChat = ({fetchAgain}) => {
                     Authorization : `Bearer ${user.token}`,
                 },
             };
-    
-            const {data} = await axios.get('/api/chat' ,config )
+
+            const {data} = await axios.get('http://localhost:5000/api/chat' ,config )
             setChats(data)
             console.log(data);
         } catch (error) {
@@ -67,7 +67,7 @@ const MyChat = ({fetchAgain}) => {
             // position:'absolute',
             // zIndex:5
             }}
-        
+
         >
         <Box
         pb={0}
@@ -131,7 +131,7 @@ const MyChat = ({fetchAgain}) => {
                         borderRadius="0"
                         key={chat._id}
                         borderWidth='0px 0px 0px 0px'
-                    >       
+                    >
                         <Text>
                         {!chat.isGroupChat ? (
                             <div style={{ display: 'flex', alignItems: 'start'  }}>
@@ -149,7 +149,7 @@ const MyChat = ({fetchAgain}) => {
                             : chat.latestMessage.content}
                         </Text>
                         )}</span>
-                            
+
                             </div>
                         ) : (
                             <div style={{ display: 'flex', alignItems:'start' }}>
@@ -173,7 +173,7 @@ const MyChat = ({fetchAgain}) => {
                 )
             }
         </Box>
-        
+
         </Box>
     )
 }

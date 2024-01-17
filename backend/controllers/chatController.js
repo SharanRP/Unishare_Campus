@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
-const Chat = require("../models/chatModel");
-const User = require("../models/userModel");
-const Notification = require('../models/NotificationModel');
+const Chat = require("../model/chatModel");
+const User = require("../model/userModel");
+const Notification = require('../model/NotificationModel');
 
 const accessChat = asyncHandler(async(req , res)=>{
 
@@ -99,12 +99,12 @@ const  createGroupChat = asyncHandler(async(req ,res) => {
         .populate("users" , "-password").populate("groupAdmin" , "-password");
 
         res.status(200).json(fullGroupChat);
-        
+
     } catch (error) {
 
         res.status(400);
         throw new Error(error.message)
-        
+
     }
 })
 
@@ -133,7 +133,7 @@ const  createGroupChat = asyncHandler(async(req ,res) => {
 
 const renameGroup = asyncHandler(async (req, res) => {
     const { chatId, chatName } = req.body;
-  
+
     const updatedChat = await Chat.findByIdAndUpdate(
       chatId,
       {
@@ -145,7 +145,7 @@ const renameGroup = asyncHandler(async (req, res) => {
     )
       .populate("users", "-password")
       .populate("groupAdmin", "-password");
-  
+
     if (!updatedChat) {
       res.status(404);
       throw new Error("Chat Not Found");
@@ -172,7 +172,7 @@ const renameGroup = asyncHandler(async (req, res) => {
     //   const updatedChat = await Chat.findById(chatId)
     //   .populate("users", "-password")
     //   .populate("groupAdmin", "-password");
-  
+
     if (!removed) {
       res.status(404);
       throw new Error("Chat Not Found");
@@ -195,7 +195,7 @@ const renameGroup = asyncHandler(async (req, res) => {
     )
       .populate("users", "-password")
       .populate("groupAdmin", "-password");
-  
+
     if (!added) {
       res.status(404);
       throw new Error("Chat Not Found");
@@ -203,6 +203,6 @@ const renameGroup = asyncHandler(async (req, res) => {
       res.json(added);
     }
   });
-  
+
 
 module.exports = {accessChat , fetchChats , createGroupChat , renameGroup , removeFromGroup , addToGroup}

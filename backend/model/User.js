@@ -28,9 +28,9 @@ UserSchema.statics.signup = async function (email, password) {
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
-  const user = await this.create({ email, password: hash });
+  const user2 = await this.create({ email, password: hash });
 
-  return user;
+  return user2;
 };
 
 UserSchema.statics.login = async function (email, password) {
@@ -44,15 +44,15 @@ UserSchema.statics.login = async function (email, password) {
     throw Error('Enter Strong Password!');
   }
 
-  const user = await this.findOne({ email });
+  const user2 = await this.findOne({ email });
 
-  if (!user) {
+  if (!user2) {
     throw Error('Email is not registered...');
   }
 
-  console.log(user);
+  console.log(user2);
 
-  const verify = await bcrypt.compare(password, user.password);
+  const verify = await bcrypt.compare(password, user2.password);
 
   console.log(verify);
 
@@ -60,7 +60,7 @@ UserSchema.statics.login = async function (email, password) {
     throw Error('Password is wrong...');
   }
 
-  return user;
+  return user2;
 };
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User2', UserSchema);

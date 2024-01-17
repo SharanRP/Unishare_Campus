@@ -65,7 +65,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
       setLoading(true);
 
-      const { data } = await axios.get(`/api/message/${selectedChat._id}`, config);
+      const { data } = await axios.get(`http://localhost:5000/api/message/${selectedChat._id}`, config);
       setMessages(data);
       setLoading(false);
       console.log(messages)
@@ -95,7 +95,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               };
               setNewMessage("");
               const { data } = await axios.post(
-                "/api/message",
+                "http://localhost:5000/api/message",
                 {
                   content: newMessage,
                   chatId: selectedChat,
@@ -128,7 +128,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       );
       const data = await response.json();
       console.log(data)
-      const formattedJoke = `${data.setup} 
+      const formattedJoke = `${data.setup}
                              ${data.delivery}`;
       setJoke(formattedJoke);
     } catch (error) {
@@ -232,7 +232,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             justifyContent="flex-end"
             p={3}
             bgColor="transparent"
-            backdropFilter="auto" 
+            backdropFilter="auto"
             backdropBlur="3px"
             border='2px'
             borderColor='blue.200'
@@ -249,7 +249,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             <FormControl
             display="flex"
             justifyContent="space-between"
-            flexDirection="row" 
+            flexDirection="row"
             position="absolute"
             bg="gray.600"
             borderRadius='0'
@@ -258,11 +258,11 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             right="0"
             p={2.2}
             my={0}
-            alignItems="center" 
+            alignItems="center"
             onKeyDown={sendTheMessage}
             isRequired
             >
-            {isTyping? <div><Lottie 
+            {isTyping? <div><Lottie
             options={{
               loop: true,
               autoplay: true,
@@ -283,7 +283,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 placeholder="Click to start typing"
                 onChange={typingHandler}
                 value={newMessage}
-                flex="1" 
+                flex="1"
             />
             <IconButton
                 icon={<i class="fi fi-ss-paper-plane-top" style={{height:'9' , width:'9'}} ></i>}
@@ -292,7 +292,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 alignItems='center'
                 bgColor='transparent'
                 aria-label="Send Message"
-                onClick={sendTheMessage} 
+                onClick={sendTheMessage}
             />
             </FormControl>
           {/* </Box> */}
@@ -313,21 +313,21 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             fontFamily='Nunito Sans'
           >
             <p className='animated' style={{margin:5}}> Click on User to Start Chatting </p>
-            {joke && 
-            <Box 
+            {joke &&
+            <Box
             onClick={handleClick}
             _hover={{ cursor: 'pointer' }}
-            display='flex'  
-            fontSize='4xl' 
-            fontWeight='bold' 
+            display='flex'
+            fontSize='4xl'
+            fontWeight='bold'
             fontFamily='Comic Neue'
-            justifyContent='center' 
-            backdropFilter="auto" 
+            justifyContent='center'
+            backdropFilter="auto"
             backdropBlur="3px"
             border='1px'
             borderColor='blue.200'
             borderRadius='2xl'
-            padding={7} 
+            padding={7}
             mt={36}
             mx={6}
             >

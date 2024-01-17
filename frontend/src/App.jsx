@@ -49,7 +49,7 @@ const App = () => {
   }, []);
 
   const shouldShowFooter =
-    !['/login', '/signup'].includes(window.location.pathname) && !loadingState;
+    !['/login', '/signup' ,'/features/chats' , '/features/community'].includes(window.location.pathname) && !loadingState;
 
   return (
   <ChakraProvider>
@@ -64,7 +64,7 @@ const App = () => {
 
       {isvisible && window.location.pathname === '/' && <FixedButton />}
       <Routes>
-        {/* <Route exact path="/" element={<Home />} /> */}
+        <Route exact path="/" element={<Home />} />
         <Route path="/blogs">
           <Route
             index
@@ -89,8 +89,8 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/features" element={<MainFeatures />} />
         {/* <div className="App"> */}
-        <Route path="/" element={<Homepage />} exact />
-        <Route path="/chats" element={<ChatPage />} />
+        <Route path="/features/community" element={<Homepage />}  />
+        <Route path="/features/chats" element={<ChatPage />} />
         {/* </div> */}
 
         <Route
@@ -105,8 +105,8 @@ const App = () => {
         <Route path="/features/previous-year-papers" element={<Papers />} />
         <Route path="/features/chat-bot" element={<MainFeatures />} />
         <Route path="/features/college-events" element={<CalenderPage />} />
-        <Route path="/features/community" element={<MainFeatures />} />
-        <Route path="/features/community" element={<MainFeatures />} />
+        {/* <Route path="/features/community" element={<ChatPage />} />
+        <Route path="/features/community" element={<MainFeatures />} /> */}
       </Routes>
 
       {shouldShowFooter && (

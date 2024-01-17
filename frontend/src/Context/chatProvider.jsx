@@ -15,7 +15,7 @@ const ChatProvider = ({children}) => {
 
        if(!userInfo)
        {
-        navigate("/")
+        navigate("/features/community")
        }
     },[navigate])
     return (

@@ -35,7 +35,7 @@ const GroupChatModal = ({children}) =>{
         if (!query) {
           return;
         }
-    
+
         try {
           setLoading(true);
           const config = {
@@ -43,7 +43,7 @@ const GroupChatModal = ({children}) =>{
               Authorization: `Bearer ${user.token}`,
             },
           };
-          const { data } = await axios.get(`/api/user?search=${search}`, config);
+          const { data } = await axios.get(`http://localhost:5000/api/user?search=${search}`, config);
           console.log(data);
           setLoading(false);
           setSearchResult(data);
@@ -77,7 +77,7 @@ const GroupChatModal = ({children}) =>{
                 isClosable: true,
                 position:'bottom-right'
               })
-            return;  
+            return;
         }
 
         try {
@@ -87,7 +87,7 @@ const GroupChatModal = ({children}) =>{
                   Authorization: `Bearer ${user.token}`,
                 },
               };
-            const {data} = await axios.post('/api/chat/group' , { name : groupChatName , users : JSON.stringify(selectedUsers.map((su)=> su._id))} , config)  
+            const {data} = await axios.post('http://localhost:5000/api/chat/group' , { name : groupChatName , users : JSON.stringify(selectedUsers.map((su)=> su._id))} , config)
 
             setChats([data , ...chats])
             onClose()
@@ -98,7 +98,7 @@ const GroupChatModal = ({children}) =>{
                 isClosable: true,
                 position:'bottom-right'
               })
-            
+
         } catch (error) {
 
             toast({
@@ -109,7 +109,7 @@ const GroupChatModal = ({children}) =>{
                 isClosable: true,
                 position:'bottom-right'
               })
-            
+
         }
     }
 
@@ -134,7 +134,7 @@ const GroupChatModal = ({children}) =>{
     return (
         <>
           <span onClick={onOpen}>{children}</span>
-    
+
           <Modal isOpen={isOpen} onClose={onClose} >
             <ModalOverlay />
             <ModalContent bgGradient='linear(to-r, gray.900, blue.900)'>
@@ -159,7 +159,7 @@ const GroupChatModal = ({children}) =>{
                 <FormControl>
                 <FormLabel>Members</FormLabel>
                 <Input type='text' onChange={(e) => handleSearch(e.target.value)} />
-                
+
                 </FormControl>
                 <Box width='100%' flexWrap='wrap' display='flex' mt={4}>
                 {selectedUsers.map(userSelected => <HStack><UserBadge key = {userSelected._id} handleFunction={() => handleDelete(userSelected)} userSelected={userSelected} /></HStack>)}
@@ -167,7 +167,7 @@ const GroupChatModal = ({children}) =>{
                 : searchResult?.slice(0 , 4).map(user => <UserListItem key={user._id} user={user} handleFunction={() => handleGroup(user)} />)}
                 </Box>
               </ModalBody>
-    
+
               <ModalFooter>
                 <Button bgGradient='linear(to-l, cyan.300, cyan.500)' mr={3} onClick={handleSubmit}>
                   Create Chat

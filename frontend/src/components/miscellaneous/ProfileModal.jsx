@@ -24,7 +24,8 @@ const ProfileModal = ({user , children}) => {
           <ModalBody d='flex' flexDir='column' justifyContent='center' alignItems='center' style={{display:"flex" , justifyContent:"center", alignItems:"center" }} >
             <Image
             align='center'
-            src = {user.pic}
+            // src={user.pic}
+            src = {`https://api.multiavatar.com/${user.name}.png`}
             borderRadius='full'
             alt={user.name}
             boxSize='150px'
