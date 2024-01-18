@@ -33,6 +33,12 @@ app.get('/', (req , res) => {
 app.use('/api/user' , userRoutes2);
 app.use('/api/chat' , chatRoutes);
 app.use('/api/message' , messageRoutes);
+app.use((req, res, next) => {
+  console.log(req.method, req.path);
+  next();
+});
+
+app.use('/api/blogs', BlogRoutes);
 
 app.use(notFound)
 app.use(errorHandler)
@@ -102,16 +108,7 @@ io.on("connected" , (socket) => {
 
 //mongoose.connect('mongodb://127.0.0.1:27017/blogsDB');
 
-app.use(cors());
-app.use(express.json());
-
-app.use((req, res, next) => {
-  console.log(req.method, req.path);
-  next();
-});
-
-app.use('http://localhost:5000/api/blogs', BlogRoutes);
-app.use('http://localhost:5000/api/users', UserRoutes);
+//app.use('http://localhost:5000/api/users', UserRoutes);
 
 // app.listen(process.env.PORT, () => {
 //   console.log(`Listening on Server ${process.env.PORT}`);

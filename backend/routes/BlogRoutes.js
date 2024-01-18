@@ -1,26 +1,24 @@
 const express = require('express');
 const router = express.Router();
 const Blog = require('../model/Blog');
-const { jwtMiddleware } = require('../middlewares/jwt');
 
-router.get('/all', jwtMiddleware, async (req, res) => {
+router.get('/all', async (req, res) => {
   const blogs = await Blog.find({});
   res.status(200).json(blogs);
 });
 
-router.get('/:id', jwtMiddleware, async (req, res) => {
+router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const blog = await Blog.findById(id);
   res.status(200).json({ blog });
 });
 
-router.post('/', jwtMiddleware, async (req, res) => {
-  console.log(req.user);
+router.post('/', async (req, res) => {
   const { title, body } = req.body;
   if (!title || !body) {
     return res.status(400).json({ error: 'All fields are necessary.' });
   }
-  console.log(title, body);
+
   const blog = new Blog({
     title,
     body,
@@ -29,7 +27,7 @@ router.post('/', jwtMiddleware, async (req, res) => {
   res.status(200).json({ blog, msg: 'Blog created...' });
 });
 
-router.delete('/:id', jwtMiddleware, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   const { id } = req.params;
   const blog = await Blog.deleteOne({
     _id: id,
@@ -42,7 +40,7 @@ router.delete('/:id', jwtMiddleware, async (req, res) => {
   res.status(200).json({ msg: 'Blog deleted...' });
 });
 
-router.patch('/:id', jwtMiddleware, async (req, res) => {
+router.patch('/:id', async (req, res) => {
   const { id } = req.params;
   const { title, author, body } = req.body;
   const blog = await Blog.findByIdAndUpdate(

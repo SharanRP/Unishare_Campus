@@ -1,10 +1,10 @@
-import React, { useEffect, useContext , useLayoutEffect , useState } from 'react';
+import React, { useEffect, useContext, useLayoutEffect, useState } from 'react';
 import '../evo-calendar.midnight-blue.css';
 import styles from '../style';
 import Spinner from './Spinner';
+import { events } from './Events';
 
 const CalendarComponent = () => {
-
   const [stylesLoaded, setStylesLoaded] = useState(false);
 
   useLayoutEffect(() => {
@@ -20,20 +20,6 @@ const CalendarComponent = () => {
     loadCssFile();
   }, []);
 
-  // useEffect(() => {
-  //   const loadCalendarScripts = async () => {
-  //     await import('https://code.jquery.com/jquery-3.4.1.min.js');
-
-  //     await import(
-  //       'https://cdn.jsdelivr.net/npm/evo-calendar@latest/evo-calendar/js/evo-calendar.min.js'
-  //     );
-
-  //     $('#calendar').evoCalendar({});
-  //   };
-
-  //   loadCalendarScripts();
-  // }, []);
-
   useLayoutEffect(() => {
     if (stylesLoaded) {
       const loadCalendarScripts = async () => {
@@ -44,7 +30,6 @@ const CalendarComponent = () => {
 
         $('#calendar').evoCalendar({
           theme: 'Midnight Blue',
-
         });
       };
 
@@ -68,40 +53,7 @@ const CalendarComponent = () => {
       evoCalendarScript.onload = () => {
         $('#calendar').evoCalendar({
           theme: 'Midnight Blue',
-          calendarEvents: [
-            {
-              id: 'independence-day',
-              name: 'Independence-Day',
-              badge: 'PublicHoliday',
-              date: 'August 15, 2024',
-              type: 'holiday',
-              color: '#63d867',
-              everyYear: true,
-            },
-            {
-              id: 'diwali',
-              name: 'Diwali',
-              badge: 'PublicHoliday',
-              date: 'October 24, 2024',
-              type: 'holiday',
-              color: '#63d867',
-              everyYear: true,
-            },
-            {
-              id: 'asDf87L',
-              name: 'Graduation Day!',
-              badge: 'PublicHoliday',
-              date: 'March 21, 2024',
-              type: 'event',
-            },
-            {
-              id: 'kNybja6',
-              name: "Mom's Birthday",
-              date: 'May 27, 1965',
-              type: 'birthday',
-              everyYear: true,
-            },
-          ],
+          calendarEvents: events,
         });
       };
 

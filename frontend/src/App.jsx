@@ -27,6 +27,8 @@ import Homepage from './Pages/HomePage';
 import ChatPage from './Pages/ChatPage';
 import './App.css';
 import ChatProvider from './Context/chatProvider';
+import LogIn from './components/Authentication/LogIn';
+import SignUp from './components/Authentication/SignUp';
 
 const App = () => {
   const [isvisible, setIsVisible] = useState(false);
@@ -49,12 +51,12 @@ const App = () => {
   }, []);
 
   const shouldShowFooter =
-    !['/login', '/signup' ,'/features/chats' , '/features/community'].includes(window.location.pathname) && !loadingState;
+    ![ '/features/chats' , '/features/community'].includes(window.location.pathname) && !loadingState;
 
   return (
   <ChakraProvider>
    <ChatProvider>
-    <div className="bg-primary w-full overflow-hidden">
+    <div className="bg-primary  overflow-hidden">
 
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
@@ -65,7 +67,7 @@ const App = () => {
       {isvisible && window.location.pathname === '/' && <FixedButton />}
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/blogs">
+        {/* <Route path="/blogs">
           <Route
             index
             element={
@@ -82,11 +84,15 @@ const App = () => {
               </RequireAuth>
             }
           />
+        </Route> */}
+        <Route path="/blogs">
+          <Route index element={<Blogs />} />
+          <Route path=":id" element={<Blog />} />
         </Route>
         <Route path="/blogs/create" element={<CreateNewPost />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<div className='mx-0 my-12 py-6  relative w-1/2 left-1/4 '><LogIn /></div>} />
+        <Route path="/signup" element={<div className='mx-0 my-12 py-6 px-0 relative w-1/2 left-1/4 '><SignUp /></div>} />
         <Route path="/features" element={<MainFeatures />} />
         {/* <div className="App"> */}
         <Route path="/features/community" element={<Homepage />}  />

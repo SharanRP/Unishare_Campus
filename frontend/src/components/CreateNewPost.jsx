@@ -22,13 +22,13 @@ const CreateNewPost = () => {
     setIsLoadingState(true);
 
     try {
-      const response = await fetch('http://localhost:3000/api/blogs', {
+      const response = await fetch('http://localhost:5000/api/blogs', {
         method: 'POST',
         body: JSON.stringify({ title, body: content }),
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${
-            JSON.parse(localStorage.getItem('user')).token
+            JSON.parse(localStorage.getItem('userInfo')).token
           }`,
         },
       });

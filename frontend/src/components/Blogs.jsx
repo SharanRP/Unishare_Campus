@@ -1,46 +1,45 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { plus } from '../assets';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import CustomCard from './CustomCard';
 import styles from '../style';
 import BlogPagination from './BlogPagination';
-import { Link, useNavigate } from 'react-router-dom';
+import { plus } from '../assets';
 import Spinner from './Spinner';
-import { LoadingContext } from '../Context/LoadingContext';
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
-  const navigate = useNavigate();
-
-  const { loadingState, setIsLoadingState } = useContext(LoadingContext);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoadingState(true);
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (!user) {
-      navigate('/login');
-      return;
-    }
     const fetchData = async () => {
-      const data = await fetch('http://localhost:5000/api/blogs/all', {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${
-            JSON.parse(localStorage.getItem('user')).token
-          }`,
-        },
-      });
-      const resData = await data.json();
-      console.log(resData);
-      setBlogs(resData);
-      setIsLoadingState(false);
+      try {
+        const data = await fetch('http://localhost:5000/api/blogs/all', {
+          method: 'GET',
+        });
+        if (!data.ok) {
+          // Handle error response, if needed
+          console.error('Failed to fetch blog data');
+          return;
+        }
+
+        const resData = await data.json();
+        console.log(resData);
+        setBlogs(resData);
+      } catch (error) {
+        // Handle fetch error
+        console.error('Error during fetch:', error);
+      } finally {
+        setLoading(false);
+      }
     };
+
     fetchData();
   }, []);
 
   return (
     <>
-      {loadingState && <Spinner />}
-      {!loadingState && (
+      {loading && <Spinner />}
+      {!loading && (
         <div className="m-12">
           <div className="flex flex-col items-center justify-center">
             {[...blogs].map((blog, index) => {
@@ -57,9 +56,7 @@ const Blogs = () => {
           <section
             className={`${styles.flexCenter} ${
               styles.marginY
-            } py-4 px-7 sm:flex-row flex-col bg-black-gradient-2 rounded-[20px] box-shadow text-center max-w-4xl mx-auto ${
-              loadingState ? 'hidden' : ''
-            }`}
+            } py-4 px-7 sm:flex-row flex-col bg-black-gradient-2 rounded-[20px] box-shadow text-center max-w-4xl mx-auto`}
           >
             <div className="flex sm:flex-row flex-col flex-1 items-center sm:gap-10">
               <h2 className={`${styles.heading2}`}>Add Your Blog now</h2>
