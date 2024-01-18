@@ -21,7 +21,7 @@ const Blog = () => {
 
     const fetchData = async () => {
       try {
-        const data = await fetch(`http://localhost:3000/api/blogs/${id}`, {
+        const data = await fetch(`http://localhost:5000/api/blogs/${id}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${user.token}`,

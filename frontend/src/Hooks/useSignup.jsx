@@ -15,7 +15,7 @@ export const useSignup = () => {
     setIsLoadingState(true);
 
     try {
-      const response = await fetch('http://localhost:3000/api/user/signup', {
+      const response = await fetch('http://localhost:5000/api/users/signup', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: {

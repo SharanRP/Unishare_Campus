@@ -37,7 +37,9 @@ app.use('/api/message' , messageRoutes);
 app.use(notFound)
 app.use(errorHandler)
 
-
+app.get('/api/chat', (req , res) => {
+  res.send(chats)
+})
 
 app.get("/api/chat/:id" , (req , res) => {
     const singleChat = chats.find((c) => {
@@ -55,7 +57,7 @@ const server = app.listen(PORT , console.log("Server is running on port 5000"))
 const io = require('socket.io')(server , {
     pingTimeOut : 70000,
     cors: {
-        origin:"http//localhost:3000"
+        origin:"http://localhost:3000"
     }
 });
 io.on("connected" , (socket) => {
@@ -108,8 +110,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/blogs', BlogRoutes);
-app.use('/api/users', UserRoutes);
+app.use('http://localhost:5000/api/blogs', BlogRoutes);
+app.use('http://localhost:5000/api/users', UserRoutes);
 
 // app.listen(process.env.PORT, () => {
 //   console.log(`Listening on Server ${process.env.PORT}`);
