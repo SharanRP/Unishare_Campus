@@ -1,0 +1,67 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Navigation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #mapContainer {
+            width: 100%;
+            height: 100vh;
+            border: 1px solid #000;
+        }
+
+        #dropdown {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mapContainer"></div>
+
+    <!-- Add a dropdown menu -->
+    <div id="dropdown">
+        <label for="destination">Select Destination:</label>
+        <select id="destination" onchange="selectDestination()">
+            <option value="">Select...</option>
+            <option value="FOOTBALL_GROUND">Football Ground</option>
+            <option value="CRICKET_GROUND">Cricket Ground</option>
+            <option value="BOYS_HOSTEL">Boys Hostel</option>
+            <option value="GIRLS_HOSTEL">Girls Hostel</option>
+            <option value="NEW_HOSTEL">New Hostel</option>
+            <option value="CS/IT_DEPARTMENT">CS/IT Department</option>
+            <option value="BUILDING_1">Building 1</option>
+            <option value="BUILDING_2">Building 2</option>
+            <option value="BUILDING_3">Building 3</option>
+            <option value="BUILDING_4">Building 4</option>
+            <option value="BUILDING_5">Building 5</option>
+            <option value="BUILDING_6">Building 6</option>
+            <option value="GIRLS_RESTROOM">Girls Restroom</option>
+            <option value="BOYS_RESTROOM">Boys Restroom</option>
+            <option value="QUAD_STEPS">Quad Steps</option>
+            <option value="HALLWAY">Hallway</option>
+            <option value="TEXTILE_GARDEN">Textile Garden</option>
+            <option value="MECHANICAL_BUILDING">Mechanical Building</option>
+            <option value="WORKSHOP_1">Workshop 1</option>
+            <option value="WORKSHOP_2">Workshop 2</option>
+            <option value="WORKSHOP_3">Workshop 3</option>
+            <option value="CHEMISTRY_DEPARTMENT">Chemistry Department</option>
+            <option value="STUDY_SPACE">Study Space</option>
+            <option value="OPEN_SPACE">Open Space</option>
+            <option value="DIRECTOR_S_BUNGALOW">Director's Bungalow</option>
+        </select>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
