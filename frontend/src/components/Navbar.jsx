@@ -43,6 +43,9 @@ const Navbar = () => {
         <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
           <Link to="/features/college-events">Events</Link>
         </li>
+        <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
+          <Link to="/features">Features</Link>
+        </li>
         {isAuthenticated && (
           <div>
             <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">

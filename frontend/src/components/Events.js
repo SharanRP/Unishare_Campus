@@ -1,6 +1,6 @@
 export const events = [
   {
-    id: 'dla-vjti',
+    id: 'dla vjti',
     name: 'LitFest by DLA VJTI',
     badge: 'College Event',
     date: 'January 2, 2024',
@@ -9,7 +9,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'dla-vjti',
+    id: 'dla vjti',
     name: 'LitFest by DLA VJTI',
     badge: 'College Event',
     date: 'January 3, 2024',
@@ -19,7 +19,7 @@ export const events = [
   },
 
   {
-    id: 'pratibimb-vjti',
+    id: 'pratibimb vjti',
     name: 'Pratibimb',
     badge: 'College Event',
     date: 'January 4, 2024',
@@ -28,7 +28,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'pratibimb-vjti',
+    id: 'pratibimb vjti',
     name: 'Pratibimb',
     badge: 'College Event',
     date: 'January 5, 2024',
@@ -37,7 +37,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'pratibimb-vjti',
+    id: 'pratibimb vjti',
     name: 'Pratibimb',
     badge: 'College Event',
     date: 'January 6, 2024',
@@ -47,7 +47,7 @@ export const events = [
   },
 
   {
-    id: 'rangavardhan-vjti',
+    id: 'rangavardhan vjti',
     name: 'Rangavardhan',
     badge: 'College Event',
     date: 'January 7, 2024',
@@ -56,7 +56,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'rangavardhan-vjti',
+    id: 'rangavardhan vjti',
     name: 'Rangavardhan',
     badge: 'College Event',
     date: 'January 8, 2024',
@@ -65,7 +65,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'rangavardhan-vjti',
+    id: 'rangavardhan vjti',
     name: 'Rangavardhan',
     badge: 'College Event',
     date: 'January 9, 2024',
@@ -75,7 +75,7 @@ export const events = [
   },
 
   {
-    id: 'ecell-vjti',
+    id: 'ecell vjti',
     name: 'Ecell',
     badge: 'College Event',
     date: 'January 10, 2024',
@@ -84,7 +84,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'ecell-vjti',
+    id: 'ecell vjti',
     name: 'Ecell',
     badge: 'College Event',
     date: 'January 11, 2024',
@@ -94,7 +94,7 @@ export const events = [
   },
 
   {
-    id: 'technovanza-vjti',
+    id: 'technovanza vjti',
     name: 'Technovanza',
     badge: 'College Event',
     date: 'January 12, 2024',
@@ -103,7 +103,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'technovanza-vjti',
+    id: 'technovanza vjti',
     name: 'Technovanza',
     badge: 'College Event',
     date: 'January 13, 2024',
@@ -112,7 +112,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'technovanza-vjti',
+    id: 'technovanza vjti',
     name: 'Technovanza',
     badge: 'College Event',
     date: 'January 14, 2024',
@@ -122,7 +122,7 @@ export const events = [
   },
 
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 8, 2024',
@@ -131,7 +131,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 9, 2024',
@@ -140,7 +140,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 10, 2024',
@@ -149,7 +149,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 11, 2024',
@@ -158,7 +158,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 12, 2024',
@@ -167,7 +167,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 13, 2024',
@@ -176,7 +176,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 14, 2024',
@@ -185,7 +185,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 15, 2024',
@@ -194,35 +194,35 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 16, 2024',
     color: '#63d867',
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 17, 2024',
     color: '#63d867',
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 18, 2024',
     color: '#63d867',
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 19, 2024',
     color: '#63d867',
   },
   {
-    id: 'enthusia-vjti',
+    id: 'enthusia vjti',
     name: 'Enthusia',
     badge: 'College Event',
     date: 'February 20, 2024',
@@ -230,7 +230,7 @@ export const events = [
   },
 
   {
-    id: 'nexus-vjti',
+    id: 'nexus vjti',
     name: 'Nexus by Digital VJTI',
     badge: 'College Event',
     date: 'February 24, 2024',
@@ -239,7 +239,7 @@ export const events = [
     everyYear: false,
   },
   {
-    id: 'nexus-vjti',
+    id: 'nexus vjti',
     name: 'Nexus by Digital VJTI',
     badge: 'College Event',
     date: 'February 25, 2024',
@@ -249,7 +249,7 @@ export const events = [
   },
 
   {
-    id: 'new-year',
+    id: 'new year',
     name: 'New Year',
     badge: 'PublicHoliday',
     date: 'January 1, 2024',
@@ -258,7 +258,7 @@ export const events = [
     everyYear: true,
   },
   {
-    id: 'republic-day',
+    id: 'republic day',
     name: 'Republic Day',
     badge: 'PublicHoliday',
     date: 'January 26, 2024',
@@ -276,7 +276,7 @@ export const events = [
     everyYear: true,
   },
   {
-    id: 'good-friday',
+    id: 'good friday',
     name: 'Good Friday',
     badge: 'PublicHoliday',
     date: 'April 19, 2024',
@@ -285,8 +285,8 @@ export const events = [
     everyYear: true,
   },
   {
-    id: 'eid-al-fitr',
-    name: 'Eid al-Fitr',
+    id: 'eid al fitr',
+    name: 'Eid al Fitr',
     badge: 'PublicHoliday',
     date: 'April 29, 2024',
     type: 'holiday',
@@ -294,7 +294,7 @@ export const events = [
     everyYear: true,
   },
   {
-    id: 'independence-day',
+    id: 'independence day',
     name: 'Independence Day',
     badge: 'PublicHoliday',
     date: 'August 15, 2024',
@@ -303,7 +303,7 @@ export const events = [
     everyYear: true,
   },
   {
-    id: 'ganesh-chaturthi',
+    id: 'ganesh chaturthi',
     name: 'Ganesh Chaturthi',
     badge: 'PublicHoliday',
     date: 'September 2, 2024',
@@ -321,7 +321,7 @@ export const events = [
     everyYear: true,
   },
   {
-    id: 'eid-al-adha',
+    id: 'eid al adha',
     name: 'Eid al-Adha',
     badge: 'PublicHoliday',
     date: 'October 30, 2024',
@@ -330,7 +330,7 @@ export const events = [
     everyYear: true,
   },
   {
-    id: 'guru-nanak-jayanti',
+    id: 'guru nanak jayanti',
     name: 'Guru Nanak Jayanti',
     badge: 'PublicHoliday',
     date: 'November 12, 2024',

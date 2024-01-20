@@ -189,11 +189,11 @@ const CustomCard = ({
               isSingle ? 'w-full' : 'sm:w-2/3'
             }  p-4 py-0 text-[16px] sm:mx-4 overflow-hidden text-gray-800bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40`}
           >
-            <h5 className="block mb-2 text-2xl font-semibold text-gray-100">
+            <h5 className="block mb-2 text-4xl font-semibold text-gray-100">
               {title}
             </h5>
             <div className="prose">
-              <Markdown remarkPlugins={[remarkGfm]}>
+              <Markdown remarkPlugins={[remarkGfm]} className='text-gray-200 text-xl '>
                 {truncatedDescription}
               </Markdown>
             </div>
