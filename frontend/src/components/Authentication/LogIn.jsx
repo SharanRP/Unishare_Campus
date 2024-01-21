@@ -48,7 +48,7 @@ const LogIn = ()=> {
               });
               localStorage.setItem('userInfo',JSON.stringify(data));
               setLoading(false)
-              navigate("/features/chats");
+              navigate("/");
         } catch (error) {
             toast({
                 title: 'Error Occured',

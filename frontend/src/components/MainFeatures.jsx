@@ -46,8 +46,8 @@ const FeatureCard = ({ title, tag, info, buttontext, style, tagStyle, page }) =>
   };
 
   return (
-    <div className="card1 max-w-[380px] p-6 flex flex-col bg-clip-border rounded-xl bg-gradient-to-tr from-gray-700 via-gray-900 to-black shadow-md">
-      <div className={`heading w-full mb-3`}>
+    <div className="card1 max-w-[380px] p-3 flex flex-col bg-clip-border rounded-xl bg-gradient-to-tr from-gray-700 via-gray-900 to-black shadow-md">
+      <div className={`heading w-full mb-3 `}>
         <h3 className="text-3xl font-semibold font ">{title}</h3>
       </div>
       <div className="tag mb-1">
@@ -58,10 +58,10 @@ const FeatureCard = ({ title, tag, info, buttontext, style, tagStyle, page }) =>
       </div>
       <div className="function">
         <button
-          className={`relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group ${style}`}
+          className={`mx-auto left-1/4 relative inline-flex items-center justify-center p-0.5 mb-3 me-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group ${style}`}
           onClick={() => handleButtonClick(page)}
         >
-          <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+          <span className="relative px-3 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             {buttontext}
           </span>
         </button>
