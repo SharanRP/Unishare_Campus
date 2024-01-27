@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Map</title>
+  <style>
+    #map-container {
+      width: 100%;
+      height: 100%;
+      margin-top: 20px;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter the destination</h1>
+
+  <label for="destination">Select destination:</label>
+  <select id="destination" onchange="updateMap()">
+    <!-- Populate options dynamically using JavaScript -->
+  </select>
+
+  <div id="map-container">
+    <!-- Map will be displayed here -->
+  </div>
+
+  <script src="script1.js"></script>
+</body>
+</html>
