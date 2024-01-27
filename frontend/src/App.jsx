@@ -29,6 +29,8 @@ import './App.css';
 import ChatProvider from './Context/chatProvider';
 import LogIn from './components/Authentication/LogIn';
 import SignUp from './components/Authentication/SignUp';
+import InteractiveMap from './components/maps';
+
 
 const App = () => {
   const [isvisible, setIsVisible] = useState(false);
@@ -51,7 +53,7 @@ const App = () => {
   }, []);
 
   const shouldShowFooter =
-    ![ '/features/chats' , '/features/community'].includes(window.location.pathname) && !loadingState;
+    ![ '/features/chats' , '/features/community' , '/maps'].includes(window.location.pathname) && !loadingState;
 
   return (
   <ChakraProvider>
@@ -111,6 +113,7 @@ const App = () => {
         <Route path="/features/previous-year-papers" element={<Papers />} />
         <Route path="/features/chat-bot" element={<MainFeatures />} />
         <Route path="/features/college-events" element={<CalenderPage />} />
+        <Route path = "/maps" element = {<InteractiveMap />} />
         {/* <Route path="/features/community" element={<ChatPage />} />
         <Route path="/features/community" element={<MainFeatures />} /> */}
       </Routes>

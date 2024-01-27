@@ -70,6 +70,10 @@ html {
   );
 }
 
+.highlighted-room {
+  fill: yellow;
+}
+
 .bg-black-gradient {
   background: linear-gradient(
     144.39deg,
