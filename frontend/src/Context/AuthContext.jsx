@@ -30,7 +30,7 @@ const AuthContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    const token = JSON.parse(localStorage.getItem('user'))?.token;
+    const token = JSON.parse(localStorage.getItem('userInfo'))?.token;
     if (!token) return;
     const exp = token.exp;
     if (Date.now() >= exp * 1000) {

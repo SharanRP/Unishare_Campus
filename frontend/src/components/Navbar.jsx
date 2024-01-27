@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState , useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { close, unihub, menu } from '../assets';
 import useLogout from '../Hooks/useLogout';
@@ -10,6 +10,8 @@ const Navbar = () => {
 
   const { isAuthenticated } = useAuthContext();
 
+  const [ isLoggedIn , setIsLoggedIn] = useState(false);
+
   console.log(isAuthenticated);
 
   const { loadingState, setIsLoadingState } = useContext(LoadingContext);
@@ -20,6 +22,13 @@ const Navbar = () => {
     logout();
     setIsLoadingState(false);
   };
+
+  useEffect(() => {
+    const userInfo = localStorage.getItem('userInfo');
+    if (userInfo) {
+        setIsLoggedIn(true);
+    }
+}, [handleLogout]);
 
   return (
     <nav className="w-full flex justify-between items-center navbar py-6 z-10">
@@ -38,6 +47,9 @@ const Navbar = () => {
           <Link to="/blogs">Blogs</Link>
         </li>
         <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
+          <Link to="/maps">Map</Link>
+        </li>
+        <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
           <Link to="/contact">Contact us</Link>
         </li>
         <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
@@ -46,19 +58,19 @@ const Navbar = () => {
         <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
           <Link to="/features">Features</Link>
         </li>
-        {isAuthenticated && (
+        {isLoggedIn && (
           <div>
-            <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
+            <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-blue-300 mr-10">
               <button onClick={handleLogout}>Log out</button>
             </li>
           </div>
         )}
-        {!isAuthenticated && (
+        {!isLoggedIn && (
           <>
-            <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
+            <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-blue-300 mr-10">
               <Link to="/login">Log in</Link>
             </li>
-            <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white">
+            <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-blue-300">
               <Link to="/signup">Sign up</Link>
             </li>
           </>

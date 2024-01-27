@@ -32,7 +32,7 @@ export const useLogin = () => {
       }
 
       if (response.ok) {
-        localStorage.setItem('user', JSON.stringify(json));
+        localStorage.setItem('userInfo', JSON.stringify(json));
         dispatch({ type: 'LOGIN', payload: json });
         navigate('/');
       }
