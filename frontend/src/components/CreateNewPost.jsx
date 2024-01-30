@@ -54,7 +54,7 @@ const CreateNewPost = () => {
       <div
         id="popup-modal"
         tabIndex="-1"
-        className={` ${
+        className={`${
           isModalVisible ? '' : 'hidden'
         } fixed flex z-50 justify-center items-center w-full md:inset-0 max-h-full backdrop-blur-xs`}
       >

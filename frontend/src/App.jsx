@@ -29,8 +29,8 @@ import './App.css';
 import ChatProvider from './Context/chatProvider';
 import LogIn from './components/Authentication/LogIn';
 import SignUp from './components/Authentication/SignUp';
+import LostAndFound from "./components/LostAndFound";
 import InteractiveMap from './components/maps';
-
 
 const App = () => {
   const [isvisible, setIsVisible] = useState(false);
@@ -113,9 +113,10 @@ const App = () => {
         <Route path="/features/previous-year-papers" element={<Papers />} />
         <Route path="/features/chat-bot" element={<MainFeatures />} />
         <Route path="/features/college-events" element={<CalenderPage />} />
-        <Route path = "/maps" element = {<InteractiveMap />} />
         {/* <Route path="/features/community" element={<ChatPage />} />
         <Route path="/features/community" element={<MainFeatures />} /> */}
+        <Route path="/features/lost-and-found" element={<LostAndFound />} />
+        <Route path = "/maps" element = {<InteractiveMap />} />
       </Routes>
 
       {shouldShowFooter && (

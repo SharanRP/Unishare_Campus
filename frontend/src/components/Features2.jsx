@@ -25,7 +25,7 @@ const FeatureCard = ({ icon, title, content, index }) => {
 const Features2 = () => {
   const navigate = useNavigate();
   const handleButtonClick = () => {
-    navigate('/features');  
+    navigate('/features');
   };
   return (
     <section id="features" className={layout.section}>
@@ -36,7 +36,7 @@ const Features2 = () => {
       </div>
       <div className={layout.sectionInfo}>
         <h2 className={styles.heading2}>
-        Lorem, ipsum dolor., <br className='sm:block hidden' /> Lorem ipsum dolor sit..
+        Lorem, ipsum dolor., <br className='sm:block hidden' /> Lorem ipsum dolor hello
         </h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam itaque distinctio explicabo ratione sit facere similique aliquid, tenetur odio praesentium!</p>
         <div className='flex sm:justify-center justify-end w-[550px]'>

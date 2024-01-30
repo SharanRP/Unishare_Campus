@@ -21,6 +21,7 @@ import plus from "./plus.gif"
 import headAnimate from "./headAnimate.json"
 import pdficon from "./pdficon.png"
 import greenCheck from "./greenCheck.png"
+import lost from "./lost.jpg"
 
 export {
   quotes,
@@ -45,5 +46,7 @@ export {
   plus,
   headAnimate,
   pdficon,
-  greenCheck
+  greenCheck,
+  lost,
+  
 };

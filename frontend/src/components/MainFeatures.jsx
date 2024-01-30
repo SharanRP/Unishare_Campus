@@ -166,7 +166,7 @@ const MainFeatures = () => {
                   buttontext="Find Items 🔍"
                   style={buttonStyles.button6}
                   tagStyle={tagStyles.button6}
-                  page="/LostandFound"
+                  page="/features/lost-and-found"
                 />
               </div>
             </Tilt>

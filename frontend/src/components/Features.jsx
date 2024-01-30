@@ -24,7 +24,7 @@ const FeatureCard = ({ icon, title, content, index }) => {
 const Features = () => {
   return (
     <section id="features" className={layout.section}>
-      <div className={layout.sectionInfo}>
+      <div className={`${layout.sectionInfo} ml-10`}>
         <h2 className={styles.heading2}>
           Lorem, ipsum dolor., <br className='sm:block hidden' /> Lorem ipsum dolor sit..
         </h2>
