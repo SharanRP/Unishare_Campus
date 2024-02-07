@@ -5,6 +5,18 @@
   <img src="https://i.ibb.co/DD7Ndp6/unihub.png" alt="unihub">
 </p>
 
+## Members :
+<div align="center">
+  
+| ![tanmay](https://api.multiavatar.com/tanmay.svg) Tanmay | ![mayank](https://api.multiavatar.com/mayank.svg) Mayank | ![bhargav](https://api.multiavatar.com/bhargav.svg) Bhargav | ![sharan](https://api.multiavatar.com/sharan.svg) Sharan |
+| --- | --- | --- | --- |
+
+</div>
+
+
+
+
+
 ## Why UniHub?
 
 UniHub is more than just a platform; it's a community-driven ecosystem that empowers students to connect, collaborate, and excel academically. By seamlessly integrating social and academic features, UniHub creates a holistic environment that supports students throughout their educational journey, fostering a sense of belonging and shared learning experiences.
@@ -122,6 +134,9 @@ To get started with UniHub, follow these steps:
   ```bash
     cd './frontend/'
 ```
+  ```bash
+    npm i
+```
 
   ```bash
     npm run dev```
@@ -129,6 +144,10 @@ To get started with UniHub, follow these steps:
 
    ```bash
      cd './backend'
+```
+
+  ```bash
+    npm i
 ```
 
    ```bash
