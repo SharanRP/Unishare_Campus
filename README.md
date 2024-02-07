@@ -94,30 +94,15 @@ https://github.com/SharanRP/Unishare_Campus/assets/136159249/9695b73d-3f7b-46e8-
 
 UniHub is built using the following technologies:
 <div align="center">
+  
+| ![HTML](https://img.icons8.com/color/36/000000/html-5--v1.png) <div> HTML </div> | ![CSS](https://img.icons8.com/color/36/000000/css3.png)<div> CSS </div>| ![JavaScript](https://img.icons8.com/color/36/000000/javascript--v1.png)<div> JavaScript </div> | ![React](https://img.icons8.com/color/36/000000/react-native.png)<div> React </div> |
+| --- | --- | --- | --- |
 
-### Frontend
+| ![Material UI](https://img.icons8.com/color/36/000000/material-ui.png)<div> Material UI</div> | ![Chakra UI](https://img.icons8.com/color/36/000000/chakra-ui.png)<div> Chakra UI</div> | ![Node.js](https://img.icons8.com/color/36/000000/nodejs.png) <div> Node.js </div> | ![Express.js](https://img.icons8.com/color/36/000000/express.png) <div>Express.js</div> |
+| --- | --- | --- | --- |
 
-<img src="https://img.icons8.com/color/36/000000/html-5--v1.png" width="30" height="30"/> HTML
-<img src="https://img.icons8.com/color/36/000000/css3.png" width="30" height="30"/> CSS
-<img src="https://img.icons8.com/color/36/000000/javascript--v1.png" width="30" height="30"/> JavaScript
-<img src="https://img.icons8.com/color/36/000000/react-native.png" width="30" height="30"/> React
-<img src="https://img.icons8.com/color/36/000000/material-ui.png" width="30" height="30"/> Material UI
-<img src="https://img.icons8.com/color/36/000000/chakra-ui.png" width="30" height="30"/> Chakra UI
-
-### Backend
-
-<img src="https://img.icons8.com/color/36/000000/nodejs.png" width="30" height="30"/> Node.js
-<img src="https://img.icons8.com/color/36/000000/express.png" width="30" height="30"/> Express.js
-<img src="https://img.icons8.com/fluent/36/000000/flask.png" width="30" height="30"/> Flask
-
-### Database
-
-<img src="https://img.icons8.com/color/36/000000/mongodb.png" width="30" height="30"/> MongoDB
-
-### Machine Learning
-
-<img src="https://img.icons8.com/color/36/000000/python--v2.png" width="30" height="30"/> Python
-<img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="30" height="30"/> PyTorch 
+| ![Flask](https://img.icons8.com/fluent/36/000000/flask.png)<div> Flask </div>| ![MongoDB](https://img.icons8.com/color/36/000000/mongodb.png)<div> MongoDB </div>| ![Python](https://img.icons8.com/color/36/000000/python--v2.png)<div> Python </div>| ![PyTorch](https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg)<div> PyTorch </div>|
+| --- | --- | --- | --- |
 
 </div>
 
