@@ -54,7 +54,7 @@ Unishare incorporates a user-friendly pointer calculator, enabling students to t
 
 The Vivabot feature acts as a virtual practice partner for vivas and interviews. Through simulated conversations, students can refine their interview skills, build confidence, and prepare thoroughly for academic assessments.
 
-### 7. Style Guide and Collaboration Tools
+### 7. Lost and Found
 
 Lost and Found feature, simplifies the process of reporting lost items and aiding in their recovery within the academic community. Users can effortlessly submit details about lost items, while those who find them can quickly log them into the system, streamlining the search and retrieval process. This feature not only enhances campus safety but also fosters a sense of community by facilitating the return of lost belongings, promoting goodwill and cooperation among students, faculty, and staff.
 
