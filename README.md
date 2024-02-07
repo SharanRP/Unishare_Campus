@@ -53,11 +53,19 @@ Stay connected with campus life through the Events Tracker. From academic semina
 
 ## Media
 
-You can find additional media related to UniHub below:
-- https://jumpshare.com/embed/ZZ8PxfnUS0HtFSIQlQ4R
-- <video width="320" height="240" controls>
-  <source src="[video.mov](https://jumpshare.com/embed/ZZ8PxfnUS0HtFSIQlQ4R)" type="video/mp4">
-</video>
+### You can find additional media related to UniHub below:
+
+**Screenshots:**
+![Landingpage](https://github.com/SharanRP/Unishare_Campus/assets/136159249/d7f68250-8e23-4312-82f9-062857a85dc3)
+![Papers](https://github.com/SharanRP/Unishare_Campus/assets/136159249/6bc9860a-4970-44b3-a83e-5bb18071a0b9)
+![lost and found](https://github.com/SharanRP/Unishare_Campus/assets/136159249/e9afaee0-6490-4fb1-ab1e-f8115055af1e)
+![Features](https://github.com/SharanRP/Unishare_Campus/assets/136159249/d7ea7661-5505-45bd-bcaa-678bb139261f)
+![Events](https://github.com/SharanRP/Unishare_Campus/assets/136159249/3a51d982-4412-4cbe-a244-aabd49505842)
+![community](https://github.com/SharanRP/Unishare_Campus/assets/136159249/a07b7f1c-58e7-4769-afdf-e1ed7c9e0a31)
+![Blog](https://github.com/SharanRP/Unishare_Campus/assets/136159249/bfb53ea4-a4a5-403e-b399-5e926ab9238f)
+
+
+https://github.com/SharanRP/Unishare_Campus/assets/136159249/9695b73d-3f7b-46e8-898b-c2392381434e
 
 - [Project Presentation](https://example.com/unihub_presentation.pdf)
 
