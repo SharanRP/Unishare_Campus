@@ -8,7 +8,7 @@
 ## Members :
 <div align="center">
   
-| ![tanmay](https://api.multiavatar.com/tanmay.svg) Tanmay | ![mayank](https://api.multiavatar.com/mayanklegend.svg) Mayank | ![bhargav](https://api.multiavatar.com/bhargav69anus2004.svg) Bhargav | ![sharan](https://api.multiavatar.com/sharanRP21.svg) Sharan |
+| ![tanmay](https://api.multiavatar.com/tanmay.svg) Tanmay | ![mayank](https://api.multiavatar.com/mayanklegend.svg) Mayank | ![bhargav](https://api.multiavatar.com/ac.svg) Bhargav | ![sharan](https://api.multiavatar.com/sharanRP21.svg) Sharan |
 | --- | --- | --- | --- |
 
 </div>
