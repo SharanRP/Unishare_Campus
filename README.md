@@ -32,7 +32,7 @@ In the dynamic landscape of higher education, Unishare emerges as a groundbreaki
 
 ### 1. Social Networking for Students
 
-Unishare redefines social networking for students, providing a dedicated space to create profiles, connect with peers, and cultivate a virtual community. From sharing updates on academic achievements to posting snapshots of campus life, Unishare creates a vibrant online environment.
+Unishare redefines social networking for students, providing a dedicated space to create profiles, connect with peers, and cultivate a virtual community. Additionally, Unishare offers tailored features such as study groups, enabling them to exchange ideas, seek academic support
 
 ### 2. Messaging System
 
@@ -40,7 +40,7 @@ The robust messaging system ensures seamless communication among students. Wheth
 
 ### 3. Resource Sharing
 
-Facilitating knowledge exchange, Unishare includes a resource-sharing feature. Students can upload and download a diverse array of academic materials, including textbooks, lecture notes, and study guides. This fosters a culture of collaboration and shared learning resources.
+Facilitating knowledge exchange, Unishare includes a resource-sharing feature. Students can download a diverse array of academic materials, including textbooks, lecture notes, and study guides. This fosters a culture of collaboration and shared learning resources.
 
 ### 4. Book Exchange
 
