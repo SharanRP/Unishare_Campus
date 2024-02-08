@@ -1,4 +1,4 @@
-<h1 align="center"><span style="blue">UniHub</span>: Elevating Student Engagement and Collaboration</h1>
+<h1 gn="center"><span style="blue">UniHub</span>: Elevating Student Engagement and Collaboration</h1>
 
 
 <p align="center">
@@ -8,7 +8,7 @@
 ## Members :
 <div align="center">
   
-| ![tanmay](https://api.multiavatar.com/tanmay.svg) Tanmay | ![mayank](https://api.multiavatar.com/mayank.svg) Mayank | ![bhargav](https://api.multiavatar.com/bhargav.svg) Bhargav | ![sharan](https://api.multiavatar.com/sharanRP21.svg) Sharan |
+| ![tanmay](https://api.multiavatar.com/tanmay.svg) Tanmay | ![mayank](https://api.multiavatar.com/mayanklegend.svg) Mayank | ![bhargav](https://api.multiavatar.com/bhargav.svg) Bhargav | ![sharan](https://api.multiavatar.com/sharanRP21.svg) Sharan |
 | --- | --- | --- | --- |
 
 </div>
