@@ -31,6 +31,7 @@ import SignUp from './components/Authentication/SignUp';
 import LostAndFound from './components/LostAndFound';
 import InteractiveMap from './components/maps';
 import { TweenMax, Power4 } from 'gsap';
+import Chatbot from './components/Chatbot';
 
 const App = () => {
   const app = useRef(null);
@@ -110,7 +111,7 @@ const App = () => {
             />
 
             <Route path="/features/previous-year-papers" element={<Papers />} />
-            <Route path="/features/chat-bot" element={<MainFeatures />} />
+            <Route path="/features/chat-bot" element={<Chatbot />} />
             <Route path="/features/college-events" element={<CalenderPage />} />
             <Route path="/features/lost-and-found" element={<LostAndFound />} />
             <Route path="/features/maps" element={<InteractiveMap />} />
