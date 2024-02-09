@@ -60,7 +60,7 @@ const Contact = () => {
       {loadingState && <Spinner />}
       {!loadingState && (
         <div>
-          <div className={`w-full bg-primary ${styles.paddingY}`}>
+          <div className={`w-full bg-primary p-1`}>
             <div className="w-full container my-2 mx-auto md:px-6 ">
               <section className="w-full mb-2 text-center font-poppins">
                 <div className="py-12 md:px-12">

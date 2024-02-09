@@ -38,12 +38,13 @@ const Blog = () => {
     <>
       {loading && <Spinner />}
       {!loading && (
-        <div className={`${styles.flexCenter} ${styles.paddingY}`}>
+        <div className={`${styles.flexCenter} ${styles.paddingY} w-auto p-10`}>
           {blog && (
             <CustomCard
               id={blog._id}
               title={blog.title}
-              description={blog.body}
+              description={blog.content}
+              image={blog.image}
               isSingle
             />
           )}

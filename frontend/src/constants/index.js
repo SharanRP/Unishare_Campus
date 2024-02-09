@@ -42,23 +42,23 @@ export const features = [
   {
     id: '1',
     icon: star,
-    title: 'Viva Chatbot',
+    title: 'Join Our Dynamic Student Community',
     content:
-      'Enhance your academic journey with Viva Chatbot, providing instant assistance and guidance for your queries.',
+      'Connect, collaborate, and thrive within our vibrant student network.',
   },
   {
     id: '2',
     icon: shield,
-    title: 'Newsfeed/Announcements',
+    title: 'Stay Updated with College Events',
     content:
-      'Access a wealth of knowledge with our collection of Previous Year Question Papers, aiding your exam preparation.',
+      'Never miss a beat with our comprehensive timeline of exciting college events.',
   },
   {
     id: '3',
     icon: send,
-    title: 'Previous Year Question Papers',
+    title: 'Ace Exams with Past Papers',
     content:
-      'A balance transfer credit card can save you a lot of money in interest charges.',
+      'Access a treasure trove of previous year question papers for effective exam preparation.',
   },
 ];
 
@@ -66,23 +66,23 @@ export const features2 = [
   {
     id: '1',
     icon: star,
-    title: 'Academic and Extracurricular Event Calendar',
+    title: 'Get Instant Answers with Viva Bot',
     content:
-      'Plan your schedule effectively using our comprehensive Event Calendar, covering academic and extracurricular activities.',
+      'Experience seamless assistance and expert guidance with our interactive Viva Chatbot.',
   },
   {
     id: '2',
     icon: shield,
-    title: 'Lost and Found',
+    title: 'Express Yourself Through Blogs',
     content:
-      'Quickly reclaim misplaced items with our efficient Lost and Found service. We streamline the process for a stress-free retrieval experience on your campus.',
+      'Unleash your creativity and share your insights with our engaging blogging platform.',
   },
   {
     id: '3',
     icon: send,
-    title: 'Previous Year Question Papers',
+    title: 'Navigate Campus Easily',
     content:
-      'A balance transfer credit card can save you a lot of money in interest charges.',
+      'Find your way around campus effortlessly with our intuitive mapping feature.',
   },
 ];
 
@@ -90,28 +90,29 @@ export const feedback = [
   {
     id: '1',
     content:
-      'An Apple a day keeps the doctor Away. An Apple a day keeps the doctor Away.',
-    name: 'Sharan Poojari',
-    title: 'VJTI SY IT',
+      'The website offers a seamless experience, making navigation intuitive and enjoyable. I found everything I needed quickly and efficiently.',
+    name: 'Emma Smith',
+    title: 'University Student',
     img: people01,
   },
   {
     id: '2',
     content:
-      'An Apple a day keeps the doctor Away. An Apple a day keeps the doctor Away.',
-    name: 'Tim Cook',
-    title: 'VJTI SY IT',
+      'I love how the website provides valuable resources and insights. It\'s become my go-to platform for staying informed and connected.',
+    name: 'John Doe',
+    title: 'College Graduate',
     img: people02,
   },
   {
     id: '3',
     content:
-      'An Apple a day keeps the doctor Away. An Apple a day keeps the doctor Away.',
-    name: 'Steve Jobs',
-    title: 'VJTI SY IT',
+      'The website\'s design is visually appealing and user-friendly. It\'s easy to explore different sections and discover new features effortlessly.',
+    name: 'Emily Johnson',
+    title: 'Student Blogger',
     img: people03,
   },
 ];
+
 
 export const stats = [
   {
@@ -122,11 +123,11 @@ export const stats = [
   {
     id: '2',
     title: 'Students',
-    value: '3000+',
+    value: '6500+',
   },
   {
     id: '3',
-    title: 'Books',
+    title: 'Community Members',
     value: '5000+',
   },
 ];

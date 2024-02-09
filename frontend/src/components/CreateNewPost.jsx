@@ -5,11 +5,14 @@ import { LoadingContext } from '../Context/LoadingContext';
 import { greenCheck } from '../assets';
 
 const CreateNewPost = () => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [state, setState] = useState({
+    title: '',
+    content: '',
+    image: null,
+  });
+
   const [error, setError] = useState(null);
 
-  // Add this state variable
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const { loadingState, setIsLoadingState } = useContext(LoadingContext);
@@ -21,12 +24,19 @@ const CreateNewPost = () => {
     setError('');
     setIsLoadingState(true);
 
+    const formData = new FormData();
+    for (const key in state) {
+      if (state.hasOwnProperty(key)) {
+        console.log(key, state[key]);
+        formData.append(key, state[key]);
+      }
+    }
+
     try {
       const response = await fetch('http://localhost:5000/api/blogs', {
         method: 'POST',
-        body: JSON.stringify({ title, body: content }),
+        body: formData,
         headers: {
-          'Content-Type': 'application/json',
           Authorization: `Bearer ${
             JSON.parse(localStorage.getItem('userInfo')).token
           }`,
@@ -38,6 +48,17 @@ const CreateNewPost = () => {
         setError(json.error);
       } else {
         console.log('Post created successfully!');
+        setState((prev) => {
+          const newState = {};
+          Object.keys(prev).forEach((key) => {
+            if (key === 'image') {
+              newState[key] = null;
+            } else {
+              newState[key] = '';
+            }
+          });
+          return newState;
+        });
         setIsModalVisible(true);
       }
     } catch (error) {
@@ -46,6 +67,25 @@ const CreateNewPost = () => {
     } finally {
       setIsLoadingState(false);
     }
+  };
+
+  const handleChange = (e) => {
+    setState((prevState) => {
+      return {
+        ...prevState,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
+
+  console.log(state);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setState((prevState) => ({
+      ...prevState,
+      image: file,
+    }));
   };
 
   return (
@@ -61,7 +101,11 @@ const CreateNewPost = () => {
         <div className="relative p-4 w-full max-w-md max-h-full">
           <div className="relative rounded-lg bg-gray-700">
             <div className="p-4 md:p-5 text-center">
-              <img className='h-[50px] w-[50px] mx-auto mb-5' src={greenCheck} alt="" />
+              <img
+                className="h-[50px] w-[50px] mx-auto mb-5"
+                src={greenCheck}
+                alt=""
+              />
               <h3 className="mb-5 text-lg font-semibold font-poppins text-white">
                 Blog Submitted Successfully!
               </h3>
@@ -84,21 +128,45 @@ const CreateNewPost = () => {
                 Enter the Blog Details
               </h1>
 
-              <div className="mt-10 grid gap-x-6 gap-y-8 sm:grid-cols-6">
-                <div className="col-span-12">
-                  <label className="block text-md font-poppins font-medium leading-6 text-gray-400 ml-2">
-                    Title
-                  </label>
-                  <div className="mt-2 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300">
-                    <input
-                      type="text"
-                      name="title"
-                      className="p-3 pl-5 w-full text-md placeholder:text-sm text-gray-100 bg-transparent hover:bg-gray-500 hover:bg-opacity-10 focus:bg-gray-500 focus:bg-opacity-10 rounded-lg border border-gray-300 font-poppins"
-                      placeholder="Enter the Heading"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
-                      required
-                    />
+              <div className="mt-10 grid gap-x-6 sm:grid-cols-6">
+                <div className="col-span-12 ">
+                  <div className="mb-7">
+                    <label className="block text-md font-poppins font-medium leading-6 text-gray-400 ml-2">
+                      Title
+                    </label>
+                    <div className="mt-1 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300">
+                      <input
+                        type="text"
+                        name="title"
+                        className="p-3 pl-5 w-full text-md placeholder:text-sm text-gray-100 bg-transparent hover:bg-gray-500 hover:bg-opacity-10 focus:bg-gray-500 focus:bg-opacity-10 rounded-lg border border-gray-300 font-poppins"
+                        placeholder="Enter the Heading"
+                        value={state.title}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="mb-7">
+                      <label className="block text-md font-poppins font-medium leading-6 text-gray-400 ml-2">
+                        Upload Image
+                      </label>
+                      <input
+                        className="block mt-1 p-3 pl-5 w-full text-md placeholder:text-sm text-gray-100 bg-transparent hover:bg-gray-500 hover:bg-opacity-10 focus:bg-gray-500 focus:bg-opacity-10 rounded-lg border border-gray-300 font-poppins"
+                        aria-describedby="file_input_help"
+                        id="file_input"
+                        type="file"
+                        onChange={handleImageChange}
+                        required
+                        name="image"
+                      />
+                      <p
+                        className="mt-1 text-xs ml-2 text-gray-500 dark:text-gray-300"
+                        id="file_input_help"
+                      >
+                        SVG, PNG, JPG (MAX. 800x400px).
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div className="col-span-12">
@@ -106,10 +174,11 @@ const CreateNewPost = () => {
                     Markdown content
                   </label>
                   <textarea
-                    onChange={(e) => setContent(e.target.value)}
-                    value={content}
+                    onChange={handleChange}
+                    value={state.content}
                     rows="15"
-                    className="mt-2 p-5 pl-5 w-full text-md placeholder:text-sm text-gray-100 bg-transparent hover:bg-gray-500 hover:bg-opacity-10 focus:bg-gray-500 focus:bg-opacity-10 rounded-lg border border-gray-300 font-poppins"
+                    name="content"
+                    className="mt-1 p-5 pl-5 w-full text-md placeholder:text-sm text-gray-100 bg-transparent hover:bg-gray-500 hover:bg-opacity-10 focus:bg-gray-500 focus:bg-opacity-10 rounded-lg border border-gray-300 font-poppins"
                     placeholder="Write your thoughts here..."
                     required
                   ></textarea>

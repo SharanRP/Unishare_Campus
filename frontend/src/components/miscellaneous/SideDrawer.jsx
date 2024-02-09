@@ -121,7 +121,7 @@ const SideDrawer = () => {
         >
             <Tooltip label ="Seach Users to chat" hasArrow placement="bottom-end" >
             <Button variant='ghost' borderWidth='1px' py='4px' onClick={onOpen}   _hover={{bgColor:'gray.600' , color:'gray.100'}} >
-            <i class="fa fa-search" aria-hidden="true" color="gray-100" style={{color:"white"}} ></i>
+            <i className="fa fa-search" aria-hidden="true" color="gray-100" style={{color:"white"}} ></i>
             <Text display={{base:"none" , md:"flex" , lg:'flex'}} px={4} color='gray.100' >Search User</Text>
             </Button>
             </Tooltip>

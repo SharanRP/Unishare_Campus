@@ -1,59 +1,86 @@
 const express = require('express');
 const router = express.Router();
 const Blog = require('../model/Blog');
+const multer = require('multer');
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 router.get('/all', async (req, res) => {
-  const blogs = await Blog.find({});
-  res.status(200).json(blogs);
+  try {
+    const blogs = await Blog.find({});
+    res.status(200).json(blogs);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 router.get('/:id', async (req, res) => {
-  const { id } = req.params;
-  const blog = await Blog.findById(id);
-  res.status(200).json({ blog });
-});
-
-router.post('/', async (req, res) => {
-  const { title, body } = req.body;
-  if (!title || !body) {
-    return res.status(400).json({ error: 'All fields are necessary.' });
+  try {
+    const { id } = req.params;
+    const blog = await Blog.findById(id);
+    if (!blog) {
+      return res.status(404).json({ error: 'Blog not found' });
+    }
+    res.status(200).json({ blog });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
   }
-
-  const blog = new Blog({
-    title,
-    body,
-  });
-  await blog.save();
-  res.status(200).json({ blog, msg: 'Blog created...' });
 });
+
+router.post('/', upload.single('image'), async (req, res) => {
+  try {
+    const { title, content } = req.body;
+
+    if (!title || !content) {
+      return res.status(400).json({ error: 'Title and content are necessary.' });
+    }
+
+    const blog = new Blog({
+      title,
+      content,
+      image: req.file.buffer,
+    });
+
+    await blog.save();
+
+    res.status(201).json({ blog, msg: 'Blog created successfully.' });
+  } catch (error) {
+    console.error('Error creating blog:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 router.delete('/:id', async (req, res) => {
-  const { id } = req.params;
-  const blog = await Blog.deleteOne({
-    _id: id,
-  });
-
-  if (blog.deletedCount === 0) {
-    res.status(404).json({ msg: 'Error while deleting blog' });
-    return;
+  try {
+    const { id } = req.params;
+    const blog = await Blog.deleteOne({ _id: id });
+    if (blog.deletedCount === 0) {
+      return res.status(404).json({ error: 'Blog not found' });
+    }
+    res.status(200).json({ msg: 'Blog deleted successfully.' });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
   }
-  res.status(200).json({ msg: 'Blog deleted...' });
 });
 
 router.patch('/:id', async (req, res) => {
-  const { id } = req.params;
-  const { title, author, body } = req.body;
-  const blog = await Blog.findByIdAndUpdate(
-    id,
-    {
-      title,
-      author,
-      body,
-    },
-    { new: true },
-  );
-
-  res.status(200).json({ blog, msg: 'Blog updated...' });
+  try {
+    const { id } = req.params;
+    const { title, body } = req.body;
+    const blog = await Blog.findByIdAndUpdate(
+      id,
+      { title, body },
+      { new: true },
+    );
+    if (!blog) {
+      return res.status(404).json({ error: 'Blog not found' });
+    }
+    res.status(200).json({ blog, msg: 'Blog updated successfully.' });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 module.exports = router;

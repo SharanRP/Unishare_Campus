@@ -22,6 +22,7 @@ import headAnimate from "./headAnimate.json"
 import pdficon from "./pdficon.png"
 import greenCheck from "./greenCheck.png"
 import lost from "./lost.jpg"
+import addblog from "./addblog.json"
 
 export {
   quotes,
@@ -48,5 +49,6 @@ export {
   pdficon,
   greenCheck,
   lost,
-  
+  addblog,
+
 };

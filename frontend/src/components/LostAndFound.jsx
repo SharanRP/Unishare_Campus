@@ -7,7 +7,6 @@ import { Buffer } from 'buffer';
 import emailjs from 'emailjs-com';
 import { format } from 'date-fns';
 
-
 const Item = ({ image, title, description, item }) => {
   const [state, setState] = useState({
     fullName: '',
@@ -194,9 +193,11 @@ const Item = ({ image, title, description, item }) => {
           </div>
           <div className="description h-full">{description}</div>
           <div className="flex flex-col mt-3 md:mt-0 md:flex-row items-center justify-center sm:justify-end text-gray-500">
-            <div className='flex flex-col flex-1 text-sm'>
+            <div className="flex flex-col flex-1 text-sm">
               <p>Posted By: {item.fullName}</p>
-              {/* <p>Posted On: {format(new Date(item.createdAt), 'MMMM dd, yyyy')}</p> */}
+              <p>
+                {/* Posted On: {format(new Date(item.createdAt), 'MMMM dd, yyyy')} */}
+              </p>
             </div>
             <div>
               <button
@@ -546,9 +547,7 @@ const LostAndFound = () => {
                 <button
                   type="button"
                   className="focus:outline-none sm:w-[300px] xs:w-[200px] text-nowrap text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xl px-5 py-2.5 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-                  onClick={() => {
-
-                  }}
+                  onClick={() => {}}
                 >
                   Claim Lost Item
                 </button>

@@ -1,4 +1,4 @@
-import React, { useContext, useState , useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { close, unihub, menu } from '../assets';
 import useLogout from '../Hooks/useLogout';
@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const { isAuthenticated } = useAuthContext();
 
-  const [ isLoggedIn , setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   console.log(isAuthenticated);
 
@@ -26,9 +26,9 @@ const Navbar = () => {
   useEffect(() => {
     const userInfo = localStorage.getItem('userInfo');
     if (userInfo) {
-        setIsLoggedIn(true);
+      setIsLoggedIn(true);
     }
-}, [handleLogout]);
+  }, [handleLogout]);
 
   return (
     <nav className="w-full flex justify-between items-center navbar py-6 z-10">
@@ -44,19 +44,13 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
+          <Link to="/features">Features</Link>
+        </li>
+        <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
           <Link to="/blogs">Blogs</Link>
         </li>
         <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
-          <Link to="/maps">Map</Link>
-        </li>
-        <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
           <Link to="/contact">Contact us</Link>
-        </li>
-        <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
-          <Link to="/features/college-events">Events</Link>
-        </li>
-        <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10">
-          <Link to="/features">Features</Link>
         </li>
         {isLoggedIn && (
           <div>
@@ -77,7 +71,7 @@ const Navbar = () => {
         )}
       </ul>
 
-      <div className="sm:hidden flex flex-1 justify-end items-center">
+      <div className="smm:hidden flex flex-1 justify-end items-center">
         <img
           src={toggle ? close : menu}
           alt="menu"
@@ -98,9 +92,6 @@ const Navbar = () => {
             </li>
             <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10 mb-4">
               <Link to="/contact">Contact us</Link>
-            </li>
-            <li className="font-poppins text-nowrap font-normal cursor-pointer text-[16px] text-white mr-10 mb-4">
-              <Link to="/features/college-events">Events</Link>
             </li>
             {isAuthenticated && (
               <div>

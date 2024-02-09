@@ -8,6 +8,7 @@ import remarkGfm from 'remark-gfm';
 import LikeButton from './LikeButton';
 import styles from '../style';
 import { ToastContainer, toast } from 'react-toastify';
+import { Buffer } from 'buffer';
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -23,13 +24,7 @@ import {
   XIcon,
 } from 'react-share';
 
-const CustomCard = ({
-  id,
-  title,
-  description,
-  imageUrl = 'https://cdn.pixabay.com/photo/2015/11/06/13/25/blog-1027861_640.jpg',
-  isSingle,
-}) => {
+const CustomCard = ({ id, title, description, isSingle, image }) => {
   const date = formatDistance(subDays(new Date(), 3), new Date(), {
     addSuffix: true,
   });
@@ -40,7 +35,6 @@ const CustomCard = ({
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleShare = () => {
-    alert(`Share post with ID ${id}`);
     setIsModalVisible(true);
   };
 
@@ -65,21 +59,21 @@ const CustomCard = ({
           isModalVisible ? '' : 'hidden'
         } fixed flex z-50 justify-center font-poppins items-center md:inset-0 backdrop-blur-xs text-gray-200`}
       >
-        <div class="bg-gray-800 w-full mx-4 px-6 py-1 border max-w-[400px] border-gray-200  rounded-xl md:w-1/2 lg:w-1/3">
-          <div class="flex justify-between items center border-b border-gray-200 py-3">
-            <div class="flex items-center justify-center">
-              <p class="text-xl font-bold">Share</p>
+        <div className="bg-gray-800 w-full mx-4 px-6 py-1 border max-w-[400px] border-gray-200  rounded-xl md:w-1/2 lg:w-1/3">
+          <div className="flex justify-between items center border-b border-gray-200 py-3">
+            <div className="flex items-center justify-center">
+              <p className="text-xl font-bold">Share</p>
             </div>
             <button
               onClick={() => setIsModalVisible(false)}
-              class=" cursor-pointer hover:text-gray-300 font-bold text-md text-gray-500 flex items-center justify-center  rounded-full"
+              className=" cursor-pointer hover:text-gray-300 font-bold text-md text-gray-500 flex items-center justify-center  rounded-full"
             >
               X
             </button>
           </div>
 
-          <div class="my-4">
-            <p class="text-sm">Share this link via</p>
+          <div className="my-4">
+            <p className="text-sm">Share this link via</p>
 
             <div className="flex justify-around my-4 gap-2">
               <div className="flex flex-col items-center gap-2">
@@ -172,28 +166,37 @@ const CustomCard = ({
         <ToastContainer />
       </div>
       <section
-        className={`${styles.cardContainer}  md:w-[800px] lg:w-[1040px] mt-16 p-[7px] bg-gradient-to-b from-sky-950 from-60% to-black rounded-[1rem] bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30 hover:outline-cyan-700 hover:outline-none outline-2 box-border`}
+        className={`${styles.cardContainer} w-full lg:w-[1040px] mt-16 p-[7px] bg-gradient-to-br from-gray-800 to-black bg-center bg-cover rounded-[1rem] bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30 hover:outline-cyan-700 hover:outline-none outline-2 box-border`}
       >
         <div
-          className={`relative h-full flex ${
-            isSingle ? 'flex-col' : 'sm:flex-row'
-          } p-[10px] pb-0 sm:p-4`}
+          className={`relative h-full flex flex-1 flex-col sm:flex-row
+           p-[10px] pb-0 sm:p-4`}
         >
-          <img
-            src={imageUrl}
-            alt={`Image for ${title}`}
-            className="sm:w-1/3 sm:max-w-lg p-auto object-cover rounded-xl bg-clip-border"
-          />
+          <div className="mb-10 sm:mb-0 text-center max-w-[400px] max-h-[400px] ">
+            {image?.data ? (
+              <img
+                src={`data:image/*;base64,${Buffer.from(
+                  image.data,
+                  'binary',
+                ).toString('base64')}`}
+                alt="blog-image"
+                className="rounded-xl object-cover"
+              />
+            ) : (
+              <img src={URL.createObjectURL(image)} alt="blog-image" />
+            )}
+          </div>
           <div
-            className={`text-gray-100  ${
-              isSingle ? 'w-full' : 'sm:w-2/3'
-            }  p-4 py-0 text-[16px] sm:mx-4 overflow-hidden text-gray-800bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40`}
+            className={`text-gray-100 w-full p-4 py-0 text-[16px] sm:mx-4 overflow-hidden text-gray-800bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40`}
           >
             <h5 className="block mb-2 text-4xl font-semibold text-gray-100">
               {title}
             </h5>
             <div className="prose">
-              <Markdown remarkPlugins={[remarkGfm]} className='text-gray-200 text-xl '>
+              <Markdown
+                remarkPlugins={[remarkGfm]}
+                className="text-gray-200 text-xl "
+              >
                 {truncatedDescription}
               </Markdown>
             </div>

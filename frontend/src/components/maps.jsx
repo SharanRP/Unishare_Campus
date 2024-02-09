@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { ReactSVG } from 'react-svg';
 import { Spinner } from '@chakra-ui/react';
 import '.././index.css';
-let svgDocuments = {}; // Object to store multiple SVG documents
+let svgDocuments = {};
 let lastHighlightedElementId;
 let currentSvgFileName;
 let svgFileName;
-let fullFilePath;
 
-// Import your SVG files here
 import map_ground_floor from '../svg/map_ground_floor.svg';
 import map_main_1st from '../svg/map_main_1st.svg';
 import map_main_2nd from '../svg/map_main_2nd.svg';

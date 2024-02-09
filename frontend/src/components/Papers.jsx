@@ -10,13 +10,13 @@ const Papers = () => {
   const [selectedYear, setSelectedYear] = useState(years[0]);
 
   const papersData = [
-    { sem: 'I', year: '2018', title: 'Paper A', link: 'https://drive.google.com/drive/folders/0Bx7IrwIRxV6xSnEwQWNwYkJNaUE?resourcekey=0-tRaj67yxFBZs0AvIc9v6UQ' },
-    { sem: 'I', year: '2018', title: 'Paper A', link: '' },
-    { sem: 'I', year: '2018', title: 'Paper A', link: '' },
-    { sem: 'I', year: '2018', title: 'Paper A', link: '' },
-    { sem: 'III', year: '2020', title: 'Paper A', link: '' },
-    { sem: 'I', year: '2018', title: 'Paper A', link: '' },
-    { sem: 'I', year: '2018', title: 'Paper A', link: '' },
+    { sem: 'I', year: '2018', title: 'Physics', link: 'https://drive.google.com/drive/folders/0Bx7IrwIRxV6xSnEwQWNwYkJNaUE?resourcekey=0-tRaj67yxFBZs0AvIc9v6UQ' },
+    { sem: 'I', year: '2018', title: 'Chemistry', link: '' },
+    { sem: 'I', year: '2018', title: 'Maths-I', link: '' },
+    { sem: 'I', year: '2018', title: 'Math-I', link: '' },
+    { sem: 'III', year: '2020', title: 'DAA', link: '' },
+    { sem: 'I', year: '2018', title: 'EM', link: '' },
+    { sem: 'I', year: '2018', title: 'EG', link: '' },
   ];
 
   const filteredPapers = papersData.filter(

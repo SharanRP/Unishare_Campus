@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../style';
 import PointerCal from './PointerCal';
 import { Tilt } from 'react-tilt';
+import { TweenMax } from 'gsap/gsap-core';
 
 const defaultOptions = {
   reverse: false,
@@ -39,7 +40,15 @@ const tagStyles = {
   button6: 'text-teal-200',
 };
 
-const FeatureCard = ({ title, tag, info, buttontext, style, tagStyle, page }) => {
+const FeatureCard = ({
+  title,
+  tag,
+  info,
+  buttontext,
+  style,
+  tagStyle,
+  page,
+}) => {
   const navigate = useNavigate();
   const handleButtonClick = () => {
     navigate(page);
@@ -47,18 +56,18 @@ const FeatureCard = ({ title, tag, info, buttontext, style, tagStyle, page }) =>
 
   return (
     <div className="card1 max-w-[380px] p-3 flex flex-col bg-clip-border rounded-xl bg-gradient-to-tr from-gray-700 via-gray-900 to-black shadow-md">
-      <div className={`heading w-full mb-3 `}>
+      <div className={`w-full mb-3`}>
         <h3 className="text-3xl font-semibold font ">{title}</h3>
       </div>
-      <div className="tag mb-1">
+      <div className="mb-1">
         <p className={`text-[0.8rem] ${tagStyle}`}>{tag}</p>
       </div>
-      <div className="info mb-[4rem] md:h-[100px]">
+      <div className="mb-[4rem] md:h-[100px]">
         <p className={`${styles.paragraph} text-[1.1rem]`}>{info}</p>
       </div>
-      <div className="function">
+      <div className="">
         <button
-          className={`mx-auto left-1/4 relative inline-flex items-center justify-center p-0.5 mb-3 me-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group ${style}`}
+          className={`mx-auto relative inline-flex items-center justify-center p-0.5 mb-3 me-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group ${style}`}
           onClick={() => handleButtonClick(page)}
         >
           <span className="relative px-3 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
@@ -71,6 +80,18 @@ const FeatureCard = ({ title, tag, info, buttontext, style, tagStyle, page }) =>
 };
 
 const MainFeatures = () => {
+  const heading1 = useRef(null);
+
+  useEffect(() => {
+    TweenMax.staggerFromTo(
+      heading1.current,
+      1,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, ease: Power4.easeOut, delay: 0.5 },
+      0.3,
+    );
+  }, []);
+
   return (
     <section
       id="featurespage"
@@ -82,6 +103,7 @@ const MainFeatures = () => {
         <div className={`one py-6  w-full`}>
           <h1
             id="typing-text"
+            ref={heading1}
             className="heroHeading font-poppins font-semibold text-[52px] md:text-[58px] lg:text-[68px] text-white ss:leading-[100.8px] leading-[75px]"
           >
             Elevate Your <span className="text-gradient"> Experience</span> with
@@ -130,7 +152,7 @@ const MainFeatures = () => {
               </div>
             </Tilt>
           </div>
-          <div className={`two-two flex flex-col gap-10 sm:flex-row`}>
+          <div className={`two-two flex flex-col gap-10 sm:flex-row mb-[70px]`}>
             <Tilt options={defaultOptions}>
               <div className="bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 p-[1px] rounded-xl">
                 <FeatureCard
@@ -167,6 +189,47 @@ const MainFeatures = () => {
                   style={buttonStyles.button6}
                   tagStyle={tagStyles.button6}
                   page="/features/lost-and-found"
+                />
+              </div>
+            </Tilt>
+          </div>
+          <div className={`two-one flex flex-col gap-10 sm:flex-row mb-[70px]`}>
+            <Tilt options={defaultOptions}>
+              <div className="bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 p-[1px] rounded-xl">
+                <FeatureCard
+                  title="Write & View Blogs"
+                  tag="#Blogs"
+                  info="Express Yourself Through Blogs. Unleash your creativity and share your insights with our engaging blogging platform."
+                  buttontext="Write Blogs ✍️"
+                  style={buttonStyles.button1}
+                  tagStyle={tagStyles.button1}
+                  page="/blogs"
+                />
+              </div>
+            </Tilt>
+            <Tilt options={defaultOptions}>
+              <div className="bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 p-[1px] rounded-xl">
+                <FeatureCard
+                  title="Maps"
+                  tag="#Maps"
+                  info="Navigate Campus Easily. Find your way around campus effortlessly with our intuitive mapping feature."
+                  buttontext="View Maps 📍"
+                  style={buttonStyles.button2}
+                  tagStyle={tagStyles.button2}
+                  page="/features/maps"
+                />
+              </div>
+            </Tilt>
+            <Tilt options={defaultOptions}>
+              <div className="bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 p-[1px] rounded-xl">
+                <FeatureCard
+                  title="Viva Chatbot"
+                  tag="#Viva"
+                  info="Viva-ready in a chat! Engage with Viva Chatbot, your ultimate prep companion. Get ready now!"
+                  buttontext="Start Chat 💬"
+                  style={buttonStyles.button3}
+                  tagStyle={tagStyles.button3}
+                  page="/features/chat-bot"
                 />
               </div>
             </Tilt>
