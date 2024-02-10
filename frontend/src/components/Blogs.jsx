@@ -51,6 +51,7 @@ const Blogs = () => {
                   title={blog.title}
                   description={blog.content}
                   image={blog.image}
+                  createdAt={blog.createdAt}
                 />
               );
             })}
