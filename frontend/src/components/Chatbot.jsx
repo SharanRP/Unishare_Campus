@@ -8,13 +8,29 @@ const Chatbot = () => {
   const [chatHistory, setChatHistory] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const API_KEY = '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';
+  const [flaskResponse, setFlaskResponse] = useState(null);
+  const API_KEY = "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";
 
   const handleSendMessage = (messageContent) => {
     setChatHistory((prevChatHistory) => [
       ...prevChatHistory,
       { role: 'user', content: messageContent },
     ]);
+  const handleSendMessage = async (messageContent) => {
+    setChatHistory(prevChatHistory => [...prevChatHistory, { role: "user", content: messageContent }]);
     setIsTyping(true);
+
+    try {
+      const flaskResponse = await axios.post("http://localhost:8080/answer_question", { question: messageContent });
+      setIsTyping(false);
+      setChatHistory(prevChatHistory => [...prevChatHistory, { role: "assistant", content: flaskResponse.data.answer }]);
+      console.log(flaskResponse.data.answer)
+      return;
+    } catch (error) {
+      console.error("Error while fetching response from Flask server:", error);
+      setChatHistory(prevChatHistory => [...prevChatHistory, { role: "assistant", content: "Oops! Something went wrong while processing your request." }]);
+    }
+
     chatData(messageContent);
   };
 
@@ -85,6 +101,13 @@ const Chatbot = () => {
             <div className="text-left mb-2">
               <span className="inline-block bg-gray-600 px-3 py-1 rounded-lg text-gray-900">
                 <Spinner />
+              </span>
+            </div>
+          )}
+          {flaskResponse && (
+            <div className="mb-2 text-left">
+              <span className="inline-block bg-gradient-to-br from-cyan-500 to-cyan-900 text-white px-3 py-2 rounded-lg">
+                {flaskResponse}
               </span>
             </div>
           )}
