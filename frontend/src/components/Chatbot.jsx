@@ -7,15 +7,9 @@ const Chatbot = () => {
   const [inputText, setInputText] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
-  const API_KEY = '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';
   const [flaskResponse, setFlaskResponse] = useState(null);
   const API_KEY = "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";
 
-  const handleSendMessage = (messageContent) => {
-    setChatHistory((prevChatHistory) => [
-      ...prevChatHistory,
-      { role: 'user', content: messageContent },
-    ]);
   const handleSendMessage = async (messageContent) => {
     setChatHistory(prevChatHistory => [...prevChatHistory, { role: "user", content: messageContent }]);
     setIsTyping(true);
