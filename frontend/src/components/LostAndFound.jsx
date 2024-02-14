@@ -5,7 +5,7 @@ import Spinner from './Spinner';
 import { LoadingContext } from '../Context/LoadingContext';
 import { Buffer } from 'buffer';
 import emailjs from 'emailjs-com';
-import { formatDistance, differenceInDays } from 'date-fns';
+// import { formatDistance, differenceInDays } from 'date-fns';
 
 const Item = ({ image, title, description, item }) => {
   const [state, setState] = useState({
@@ -69,22 +69,22 @@ const Item = ({ image, title, description, item }) => {
     initializeEmailjs();
   };
 
-  const createdAtDate = new Date(Date.parse(item.createdAt));
+  // const createdAtDate = new Date(Date.parse(item.createdAt));
 
-  const today = new Date();
+  // const today = new Date();
 
-  const daysDifference = differenceInDays(today, createdAtDate);
+  // const daysDifference = differenceInDays(today, createdAtDate);
 
-  let date;
-  if (daysDifference === 0) {
-    date = 'Today';
-  } else if (daysDifference === 1) {
-    date = 'Yesterday';
-  } else {
-    date = formatDistance(createdAtDate, today, {
-      addSuffix: true,
-    });
-  }
+  // let date;
+  // if (daysDifference === 0) {
+  //   date = 'Today';
+  // } else if (daysDifference === 1) {
+  //   date = 'Yesterday';
+  // } else {
+  //   date = formatDistance(createdAtDate, today, {
+  //     addSuffix: true,
+  //   });
+  // }
 
   return (
     <>
@@ -212,7 +212,6 @@ const Item = ({ image, title, description, item }) => {
           <div className="flex flex-col mt-3 md:mt-0 md:flex-row items-center justify-center sm:justify-end text-gray-500">
             <div className="flex flex-col flex-1 text-sm">
               <p>Posted By: {item.fullName}</p>
-              <p>{date}</p>
             </div>
             <div>
               <button

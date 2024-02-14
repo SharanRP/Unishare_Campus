@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
-import { formatDistance, subDays, differenceInDays } from 'date-fns';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import LikeButton from './LikeButton';
@@ -25,22 +24,6 @@ import {
 } from 'react-share';
 
 const CustomCard = ({ id, title, description, isSingle, image, createdAt }) => {
-  const createdAtDate = new Date(Date.parse(createdAt));
-
-  const today = new Date();
-
-  const daysDifference = differenceInDays(today, createdAtDate);
-
-  let date;
-  if (daysDifference === 0) {
-    date = 'Today';
-  } else if (daysDifference === 1) {
-    date = 'Yesterday';
-  } else {
-    date = formatDistance(createdAtDate, today, {
-      addSuffix: true,
-    });
-  }
   const truncatedDescription = isSingle
     ? description
     : `${description?.substring(0, 400)}...`;
@@ -221,7 +204,7 @@ const CustomCard = ({ id, title, description, isSingle, image, createdAt }) => {
             <div className="ss:block hidden font-semibold">
               {Math.floor(Math.random() * 10 + 1)} min read &nbsp; &#x2022;
             </div>
-            <div className="xs:block hidden">{date} &nbsp; &#x2022;</div>
+            {/* <div className="xs:block hidden">{date} &nbsp; &#x2022;</div> */}
             <div>
               <FontAwesomeIcon
                 icon={faShareAlt}
