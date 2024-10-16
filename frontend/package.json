@@ -24,7 +24,7 @@
     "@material-tailwind/react": "^2.1.8",
     "@mui/icons-material": "^5.15.4",
     "@mui/material": "^5.15.4",
-    "axios": "^1.6.3",
+    "axios": "^1.7.4",
     "buffer": "^6.0.3",
     "date-fns": "^2.30.0",
     "emailjs": "^4.0.3",
